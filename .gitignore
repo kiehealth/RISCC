@@ -31,3 +31,8 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# Private
+iOS_RISCC/Certificate
+Android_RISCC/certificate
+riscc-firebase-adminsdk.json
