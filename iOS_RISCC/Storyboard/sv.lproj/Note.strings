@@ -1,0 +1,39 @@
+
+/* Class = "UITextField"; placeholder = "Title"; ObjectID = "JOz-dN-YDW"; */
+"JOz-dN-YDW.placeholder" = "Titel";
+
+/* Class = "UILabel"; text = "Note"; ObjectID = "NnB-CO-cG8"; */
+"NnB-CO-cG8.text" = "Not";
+
+/* Class = "UITabBarItem"; title = "Note"; ObjectID = "R5O-L3-kJK"; */
+"R5O-L3-kJK.title" = "Not";
+
+/* Class = "UILabel"; text = "No note available!"; ObjectID = "V7z-X1-Fx2"; */
+"V7z-X1-Fx2.text" = "No note available!";
+
+/* Class = "UITextField"; placeholder = "Search"; ObjectID = "cop-GX-m9a"; */
+"cop-GX-m9a.placeholder" = "Sök";
+
+/* Class = "UILabel"; text = "Safely Use Social Media"; ObjectID = "e2E-hJ-AM2"; */
+"e2E-hJ-AM2.text" = "Safely Use Social Media";
+
+/* Class = "UILabel"; text = "21, Mar"; ObjectID = "gkx-eX-0DA"; */
+"gkx-eX-0DA.text" = "21, Mar";
+
+/* Class = "UIButton"; normalTitle = "Close"; ObjectID = "gvf-mc-6J5"; */
+"gvf-mc-6J5.normalTitle" = "Stänga";
+
+/* Class = "UIButton"; normalTitle = "SAVE"; ObjectID = "hvQ-31-id7"; */
+"hvQ-31-id7.normalTitle" = "Spara";
+
+/* Class = "UITextView"; text = "Description"; ObjectID = "nQl-V1-YVW"; */
+"nQl-V1-YVW.text" = "Beskrivning";
+
+/* Class = "UILabel"; text = "Premier Education Group"; ObjectID = "otd-nx-ZjU"; */
+"otd-nx-ZjU.text" = "Premier Education Group";
+
+/* Class = "UILabel"; text = "Premier Education Group"; ObjectID = "qE0-Rq-BoH"; */
+"qE0-Rq-BoH.text" = "Premier Education Group";
+
+/* Class = "UILabel"; text = "Safely Use Social Media"; ObjectID = "qNt-gh-1BY"; */
+"qNt-gh-1BY.text" = "Safely Use Social Media";

@@ -1,0 +1,291 @@
+
+"OK" = "OK";
+
+"Cancel" = "Cancel";
+
+"Survey" = "Survey";
+
+"Notification" = "Notification";
+
+"Link" = "Link";
+
+"Feedback" = "Feedback";
+
+"Note" = "Note";
+
+"Welcome" = "Welcome";
+
+"Please enter your details below to sign in" = "Please enter your details below to sign in";
+
+"Email" = "Email";
+
+"Password" = "Password";
+
+"Sign In" = "Sign In";
+
+"Forgot Password" = "Forgot Password";
+
+"Don't have account?" = "Don't have account?";
+
+"Sign Up" = "Sign Up";
+
+"Loading..." = "Loading...";
+
+"Please grant all required permissions" = "Please grant all required permissions";
+
+"Contact Us" = "Contact Us";
+
+"Privacy Policy" = "Privacy Policy";
+
+"About" = "About";
+
+"Change Password" = "Change Password";
+
+"Log Out" = "Log Out";
+
+"Edit Profile" = "Edit Profile";
+
+"Title" = "Title";
+
+"Contact Number" = "Contact Number";
+
+"Search" = "Search";
+
+"Create new profile" = "Create new profile";
+
+"First Name" = "First Name";
+
+"Last Name" = "Last Name";
+
+"Phone" = "Phone";
+
+"Confirm Password" = "Confirm Password";
+
+"Terms of Service" = "Terms of Service";
+
+"Take photo" = "Take photo";
+
+"Select from gallery" = "Select from gallery";
+
+"Select picture" = "Select picture";
+
+"First name is empty" = "First name is empty";
+
+"Last name is empty" = "Last name is empty";
+
+"Email is empty" = "Email is empty";
+
+"Phone is empty" = "Phone is empty";
+
+"Invalid phone number" = "Invalid phone number";
+
+"Password is empty" = "Password is empty";
+
+"Confirm password is empty" = "Confirm password is empty";
+
+"Password doesn't match" = "Password doesn't match";
+
+"Profile image is empty" = "Profile image is empty";
+
+"Invalid email address" = "Invalid email address";
+
+"Enter verification code" = "Enter verification code";
+
+"Verify" = "Verify";
+
+"Verification code has been sent to your email. Please check your email and update your password." = "Verification code has been sent to your email. Please check your email and update your password.";
+
+"Verification code doesn't match" = "Verification code doesn't match";
+
+"Submit" = "Submit";
+
+"Topic" = "Topic";
+
+"Posting feedback..." = "Posting feedback...";
+
+"Description" = "Description";
+
+"Save Note" = "Save Note";
+
+"New note" = "New note";
+
+"Signing up. please wait...." = "Signing up. please wait....";
+
+"Email or phone number with country code" = "Email or phone number with country code";
+
+"Verification code will be sent at your email or phone number to reset your password." = "Verification code will be sent at your email or phone number to reset your password.";
+
+"Send Verification Code" = "Send Verification Code";
+
+"Email or phone is empty" = "Email or phone is empty";
+
+"Invalid email or phone number" = "Invalid email or phone number";
+
+"Unable to request reset code" = "Unable to request reset code";
+
+"Verification Code" = "Verification Code";
+
+"Verification code has been sent to your email.Please check your email and" = "Verification code has been sent to your email.Please check your email and";
+
+"New password" = "New password";
+
+"Confirm new password" = "Confirm new password";
+
+"Reset password" = "Reset password";
+
+"Unable to reset password" = "Unable to reset password";
+
+"Resetting password..." = "Resetting password...";
+
+"Unable to load web pages" = "Unable to load web pages";
+
+"Links" = "Links";
+
+"Deleting note, please wait..." = "Deleting note, please wait...";
+
+"Loading notes..." = "Loading notes...";
+
+"requesting Verification Code" = "requesting Verification Code";
+
+"Old password" = "Old password";
+
+"Unable to change password, please try again later" = "Unable to change password, please try again later";
+
+"Change password..." = "Change password...";
+
+"Old password is empty" = "Old password is empty";
+
+"New password is empty" = "New password is empty";
+
+"Password changed. Please re-login again!!" = "Password changed. Please re-login again!!";
+
+"Update" = "Update";
+
+"First Name" = "First Name";
+
+"Last Name" = "Last Name";
+
+"Unable to update profile" = "Unable to update profile";
+
+"updating profile" = "updating profile";
+
+"Unable to get data" = "Unable to get data";
+
+"Previous" = "Previous";
+
+"Next" = "Next";
+
+"Your answer" = "Your answer";
+
+"I agree to the" = "I agree to the";
+
+"Loading questionnaire..." = "Loading questionnaire...";
+
+"Other" = "Other";
+
+"Answer" = "Answer";
+
+"Loading answered questions..." = "Loading answered questions...";
+
+"No active questionnaire group found." = "No active questionnaire group found.";
+
+"Finish" = "Finish";
+
+"Edit Note" = "Edit Note";
+
+"Your notes will be discarded, want to exit?" = "Your notes will be discarded, want to exit?";
+
+"No" = "No";
+
+"Exit" = "Exit";
+
+"Note updated" = "Note updated";
+
+"Unable to sync note." = "Unable to sync note.";
+
+"Note will be saved to server after internet connection is restored." = "Note will be saved to server after internet connection is restored.";
+
+"Build version" = "Build version";
+
+"Do you want to logout?" = "Do you want to logout?";
+
+"No questions available for now!" = "No questions available for now!";
+
+"No answer available!" = "No answer available!";
+
+"Verification code will be sent at your email to reset your password." = "Verification code will be sent at your email to reset your password.";
+
+"Project responsible" = "Project responsible";
+
+"Name" = "Name";
+
+"Phone" = "Phone";
+
+"Unable to logout" = "Unable to logout";
+
+"Saving note, please wait..." = "Saving note, please wait...";
+
+"signing up..." = "signing up...";
+
+"Verifying and signing up..." = "Verifying and signing up...";
+
+"Sign up succeeded" = "Sign up succeeded";
+
+"Permission Denied" = "Permission Denied";
+
+"Without this permission this app is unable to upload your photo. Are you sure you want to deny this permission." = "Without this permission this app is unable to upload your photo. Are you sure you want to deny this permission.";
+
+"You need to allow Storage access in the phone settings" = "You need to allow Storage access in the phone settings";
+
+"I'M SURE" = "I'M SURE";
+
+"RETRY" = "RETRY";
+
+"NOT NOW" = "NOT NOW";
+
+"SETTINGS" = "SETTINGS";
+
+"Loading questionnaire list" = "Loading questionnaire list";
+
+"Gallery permission required" = "Gallery permission required";
+
+"Camera permission required" = "Camera permission required";
+
+"Success" = "Success";
+
+"Loading Categories" = "Loading Categories";
+
+"Category" = "Category";
+
+"Edit Contact" = "Edit Contact";
+
+"You need to allow phone call access in the phone settings" = "You need to allow phone call access in the phone settings";
+
+"Without this permission this app is unable to make a phone call. Are you sure you want to deny this permission." = "Without this permission this app is unable to make a phone call. Are you sure you want to deny this permission.";
+
+"Thank you for participating in this questionnaire" = "Thank you for participating in this questionnaire";
+
+"Finishing Questionnaire..." = "Finishing Questionnaire...";
+
+"Call" = "Call";
+
+"Unable to finish questionnaire" = "Unable to finish questionnaire";
+
+"Close" = "Close";
+
+"Save" = "Save";
+
+"Open Link" = "Open Link";
+
+"No internet connection available" = "No internet connection available";
+
+"Remember Password?" = "Remember Password?";
+
+"Forgot Password?" = "Forgot Password?";
+
+"Please enter your registered email address or phone number, we will get back to you with the reset password confirmation (One Time Password)" = "Please enter your registered email address or phone number, we will get back to you with the reset password confirmation (One Time Password)";
+
+
+
+
+

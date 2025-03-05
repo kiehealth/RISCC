@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "No answer available!"; ObjectID = "3aP-LD-PEw"; */
+"3aP-LD-PEw.text" = "¡No hay respuesta disponible!";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "4KT-gc-r0v"; */
+"4KT-gc-r0v.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Answer"; ObjectID = "6d6-LK-Shq"; */
+"6d6-LK-Shq.title" = "Responder";
+
+/* Class = "UILabel"; text = "Your Answer"; ObjectID = "h3a-9A-fOj"; */
+"h3a-9A-fOj.text" = "Tu respuesta";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uHt-33-bbI"; */
+"uHt-33-bbI.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zje-8l-UIp"; */
+"zje-8l-UIp.text" = "Label";

@@ -1,0 +1,114 @@
+
+/* Class = "UILabel"; text = "Privacy Policy"; ObjectID = "1rT-a9-22v"; */
+"1rT-a9-22v.text" = "Integritetspolicy";
+
+/* Class = "UILabel"; text = "Phone Number"; ObjectID = "2cX-TL-dWp"; */
+"2cX-TL-dWp.text" = "Phone Number";
+
+/* Class = "UILabel"; text = "Change Password"; ObjectID = "2ya-Qv-E7x"; */
+"2ya-Qv-E7x.text" = "Ändra lösenord";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8YQ-3H-EbQ"; */
+"8YQ-3H-EbQ.text" = "Label";
+
+/* Class = "UILabel"; text = "First Name"; ObjectID = "C1t-Uk-Qly"; */
+"C1t-Uk-Qly.text" = "Förnamn";
+
+/* Class = "UIButton"; normalTitle = "Change Password"; ObjectID = "DQb-FP-F9i"; */
+"DQb-FP-F9i.normalTitle" = "Ändra lösenord";
+
+/* Class = "UILabel"; text = "Contact Us"; ObjectID = "Ft1-L6-psX"; */
+"Ft1-L6-psX.text" = "Kontakta oss";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "J6M-PP-E0u"; */
+"J6M-PP-E0u.text" = "E-post";
+
+/* Class = "UILabel"; text = "+46****"; ObjectID = "Ksz-cu-UDz"; */
+"Ksz-cu-UDz.text" = "+46****";
+
+/* Class = "UILabel"; text = "SETTING"; ObjectID = "MZk-d1-J8Z"; */
+"MZk-d1-J8Z.text" = "INSTÄLLNINGAR";
+
+/* Class = "UILabel"; text = "Change Password"; ObjectID = "NQY-z4-p1d"; */
+"NQY-z4-p1d.text" = "Ändra lösenord";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Njc-JY-sfb"; */
+"Njc-JY-sfb.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Old password"; ObjectID = "P5z-cB-bfg"; */
+"P5z-cB-bfg.placeholder" = "Gammalt lösenord";
+
+/* Class = "UILabel"; text = "Build Version 1.0.5"; ObjectID = "QhI-AM-6BX"; */
+"QhI-AM-6BX.text" = "Build Version 1.0.5";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "R4y-Ke-mtg"; */
+"R4y-Ke-mtg.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "Vox-cn-44t"; */
+"Vox-cn-44t.placeholder" = "Phone Number";
+
+/* Class = "UILabel"; text = "E-Mail:"; ObjectID = "YoS-5x-QxS"; */
+"YoS-5x-QxS.text" = "E-post:";
+
+/* Class = "UILabel"; text = "Name:"; ObjectID = "YtJ-TD-lhz"; */
+"YtJ-TD-lhz.text" = "Namn:";
+
+/* Class = "UILabel"; text = "lalala@lalala.com"; ObjectID = "ZNM-Ar-Mbv"; */
+"ZNM-Ar-Mbv.text" = "lalala@lalala.com";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "bvZ-35-cwA"; */
+"bvZ-35-cwA.placeholder" = "Efternamn";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "eSF-ec-osc"; */
+"eSF-ec-osc.text" = "Handla om";
+
+/* Class = "UILabel"; text = "Log Out"; ObjectID = "fYf-9T-Dnp"; */
+"fYf-9T-Dnp.text" = "Logga ut";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "g1F-Vo-uY2"; */
+"g1F-Vo-uY2.text" = "Language";
+
+/* Class = "UILabel"; text = "lalala"; ObjectID = "hF5-Zz-LPq"; */
+"hF5-Zz-LPq.text" = "lalala";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "hgH-IG-El1"; */
+"hgH-IG-El1.text" = "Language";
+
+/* Class = "UILabel"; text = "Last Name"; ObjectID = "iDo-h6-WIM"; */
+"iDo-h6-WIM.text" = "Efternamn";
+
+/* Class = "UITabBarItem"; title = "Setting"; ObjectID = "jWM-sR-Kob"; */
+"jWM-sR-Kob.title" = "INSTÄLLNINGAR";
+
+/* Class = "UITextField"; placeholder = "First Name"; ObjectID = "kxe-YL-TGJ"; */
+"kxe-YL-TGJ.placeholder" = "Förnamn";
+
+/* Class = "UILabel"; text = "Terms And Conditions"; ObjectID = "lrP-Rj-okc"; */
+"lrP-Rj-okc.text" = "Terms And Conditions";
+
+/* Class = "UITextField"; placeholder = "New password"; ObjectID = "n1K-Zi-ylb"; */
+"n1K-Zi-ylb.placeholder" = "Nytt lösenord";
+
+/* Class = "UITextField"; placeholder = "Confirm new password"; ObjectID = "pVz-gg-Ids"; */
+"pVz-gg-Ids.placeholder" = "Bekräfta nytt lösenord";
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "rrg-tf-J7J"; */
+"rrg-tf-J7J.normalTitle" = "OK";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "uEN-Xi-OD7"; */
+"uEN-Xi-OD7.placeholder" = "E-post";
+
+/* Class = "UILabel"; text = "Project responsible"; ObjectID = "uZg-lO-vVS"; */
+"uZg-lO-vVS.text" = "Projektansvarig";
+
+/* Class = "UILabel"; text = "Give Us Feedback"; ObjectID = "ug6-1V-HAt"; */
+"ug6-1V-HAt.text" = "Give Us Feedback";
+
+/* Class = "UIButton"; normalTitle = "EDIT"; ObjectID = "wYX-qW-gLe"; */
+"wYX-qW-gLe.normalTitle" = "Redigera";
+
+/* Class = "UILabel"; text = "Phone:"; ObjectID = "waD-M8-auw"; */
+"waD-M8-auw.text" = "Telefon:";
+
+/* Class = "UILabel"; text = "Profile"; ObjectID = "yk8-tf-kCw"; */
+"yk8-tf-kCw.text" = "Profil";

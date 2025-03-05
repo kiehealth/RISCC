@@ -1,0 +1,286 @@
+
+"OK" = "OK";
+
+"Cancel" = "Avbryt";
+
+"Survey" = "Undersökning";
+
+"Notification" = "Meddelande";
+
+"Link" = "Länk";
+
+"Feedback" = "Respons";
+
+"Note" = "Not";
+
+"Welcome" = "Välkommen";
+
+"Please enter your details below to sign in" = "Ange dina uppgifter för att logga in";
+
+"Email" = "E-post";
+
+"Password" = "Lösenord";
+
+"Sign In" = "Logga in";
+
+"Forgot Password" = "Glömt ditt lösenord";
+
+"Don't have account?" = "Har du inget konto?";
+
+"Sign Up" = "Bli Medlem";
+
+"Loading..." = "läser in...";
+
+"Please grant all required permissions" = "Ge alla nödvändiga behörigheter";
+
+"Contact Us" = "Kontakta oss";
+
+"Privacy Policy" = "Integritetspolicy";
+
+"About" = "Handla om";
+
+"Change Password" = "Ändra lösenord";
+
+"Log Out" = "Logga ut";
+
+"Edit Profile" = "Redigera profil";
+
+"Title" = "Titel";
+
+"Contact Number" = "Kontaktnummer";
+
+"Search" = "Sök";
+
+"Create new profile" = "Skapa ny profil";
+
+"First Name" = "Förnamn";
+
+"Last Name" = "Efternamn";
+
+"Phone" = "Telefon";
+
+"Confirm Password" = "Bekräfta lösenord";
+
+"Terms of Service" = "Användarvillkor";
+
+"Take photo" = "Ta ett foto";
+
+"Select from gallery" = "Välj från galleriet";
+
+"Select picture" = "Välj bild";
+
+"First name is empty" = "Förnamn är tomt";
+
+"Last name is empty" = "Efternamnet är tomt";
+
+"Email is empty" = "E-postadressen är tom";
+
+"Phone is empty" = "Telefonen är tom";
+
+"Invalid phone number" = "Ogiltigt telefonnummer";
+
+"Password is empty" = "Lösenordet är tomt";
+
+"Confirm password is empty" = "Bekräfta att lösenordet är tomt";
+
+"Password doesn't match" = "Lösenordet matchar inte";
+
+"Profile image is empty" = "Profilbilden är tom";
+
+"Invalid email address" = "Ogiltig e-postadress";
+
+"Enter verification code" = "Ange verifieringskod";
+
+"Verify" = "Kontrollera";
+
+"Verification code has been sent to your email. Please check your email and update your password." = "Verifieringskod har skickats till din e-postadress. Kontrollera din e-postadress och uppdatera ditt lösenord.";
+
+"Verification code doesn't match" = "Verifieringskoden matchar inte";
+
+"Submit" = "Skicka in";
+
+"Topic" = "Ämne";
+
+"Posting feedback..." = "Publicerar feedback ...";
+
+"Description" = "Beskrivning";
+
+"Save Note" = "Spara anteckning";
+
+"New note" = "Ny anteckning";
+
+"Signing up. please wait...." = "Registrerar dig. Vänta....";
+
+"Email or phone number with country code" = "E-post eller telefonnummer med landskod";
+
+"Verification code will be sent at your email or phone number to reset your password." = "Verifieringskod kommer att skickas till ditt e-postadress eller telefonnummer för att återställa din Lösenord.";
+
+"Send Verification Code" = "Skicka verifieringskod";
+
+"Email or phone is empty" = "E-post eller telefon är tom";
+
+"Invalid email or phone number" = "Ogiltigt e-postadress eller telefonnummer";
+
+"Unable to request reset code" = "Det gick inte att begära återställningskod";
+
+"Verification Code" = "Verifierings kod";
+
+"Verification code has been sent to your email.Please check your email and" = "Verifieringskoden har skickats till din e-postadress. Kontrollera din e-postadress ";
+
+"New password" = "Nytt lösenord";
+
+"Confirm new password" = "Bekräfta nytt lösenord";
+
+"Reset password" = "Återställ lösenord";
+
+"Unable to reset password" = "Det gick inte att återställa lösenordet";
+
+"Resetting password..." = "Återställ lösenord ...";
+
+"Unable to load web pages" = "Det går inte att ladda webbsidor";
+
+"Links" = "Länkar";
+
+"Deleting note, please wait..." = "Tar bort anteckningen, vänta ...";
+
+"Loading notes..." = "laddar anteckningar ...";
+
+"requesting Verification Code" = "begär verifieringskod";
+
+"Old password" = "Gammalt lösenord";
+
+"Unable to change password, please try again later" = "Det gick inte att ändra lösenord. Försök igen senare";
+
+"Change password..." = "Ändra lösenord...";
+
+"Old password is empty" = "Det gamla lösenordet är tomt";
+
+"New password is empty" = "Nytt lösenord är tomt";
+
+"Password changed. Please re-login again!!" = "Lösenordet ändrat. Logga in igen igen !!";
+
+"Update" = "Uppdatering";
+
+"First Name" = "Förnamn";
+
+"Last Name" = "Efternamn";
+
+"Unable to update profile" = "Det gick inte att uppdatera profilen";
+
+"updating profile" = "uppdaterar profil";
+
+"Unable to get data" = "Det går inte att hämta data";
+
+"Previous" = "Tidigare";
+
+"Next" = "Nästa";
+
+"Your answer" = "Ditt svar";
+
+"I agree to the" = "Jag godkänner";
+
+"Loading questionnaire..." = "Laddar frågeformulär ...";
+
+"Other" = "Övrig";
+
+"Answer" = "Svar";
+
+"Loading answered questions..." = "Laddar besvarade frågor ...";
+
+"No active questionnaire group found." = "Ingen aktiv frågegrupp hittades.";
+
+"Finish" = "Avsluta";
+
+"Edit Note" = "Redigera anteckning";
+
+"Your notes will be discarded, want to exit?" = "Dina anteckningar kommer att kasseras, vill du avsluta?";
+
+"No" = "Nej";
+
+"Exit" = "Utgång";
+
+"Note updated" = "Anteckningen uppdaterad";
+
+"Unable to sync note." = "Det gick inte att synkronisera anteckningen.";
+
+"Note will be saved to server after internet connection is restored." = "Anteckningen sparas på servern efter att internetanslutningen har återställts.";
+
+"Build version" = "Byggversion";
+
+"Do you want to logout?" = "Vill du logga ut?";
+
+"No questions available for now!" = "Inga frågor tillgängliga för tillfället!";
+
+"No answer available!" = "Inget svar tillgängligt!";
+
+"Verification code will be sent at your email to reset your password." = "Verifieringskoden skickas till din e-post för att återställa ditt lösenord.";
+
+"Project responsible" = "Projektansvarig";
+
+"Name" = "namn";
+
+"Phone" = "Telefon";
+
+"Unable to logout" = "Det gick inte att logga ut";
+
+"Saving note, please wait..." = "Sparar anteckning, vänta ...";
+
+"signing up..." = "registrerar dig...";
+
+"Verifying and signing up..." = "Verifierar och registrerar ...";
+
+"Sign up succeeded" = "Registreringen lyckades";
+
+"Permission Denied" = "Åtkomst nekad";
+
+"Without this permission this app is unable to upload your photo. Are you sure you want to deny this permission." = "Utan detta tillstånd kan den här appen inte ladda upp ditt foto. Är du säker på att du vill neka detta tillstånd.";
+
+"You need to allow Storage access in the phone settings" = "Du måste tillåta lagringsåtkomst i telefoninställningarna";
+
+"I'M SURE" = "JAG ÄR SÄKER";
+
+"RETRY" = "FÖRSÖK IGEN";
+
+"NOT NOW" = "INTE NU";
+
+"SETTINGS" = "INSTÄLLNINGAR";
+
+"Loading questionnaire list" = "Laddar frågeformulär";
+
+"Gallery permission required" = "Galleritillstånd krävs";
+
+"Camera permission required" = "Kameratillstånd krävs";
+
+"Success" = "Framgång";
+
+"Loading Categories" = "Laddar kategorier";
+
+"Category" = "Kategori";
+
+"Edit Contact" = "Redigera kontakt";
+
+"You need to allow phone call access in the phone settings" = "Du måste tillåta åtkomst till telefonsamtal i telefoninställningarna";
+
+"Without this permission this app is unable to make a phone call. Are you sure you want to deny this permission." = "Utan detta tillstånd kan den här appen inte ringa ett samtal. Är du säker på att du vill neka detta tillstånd.";
+
+"Thank you for participating in this questionnaire" = "Tack för att du deltog i det här frågeformuläret";
+
+"Finishing Questionnaire..." = "Slutför frågeformuläret ...";
+
+"Call" = "Ring upp";
+
+"Unable to finish questionnaire" = "Det gick inte att slutföra frågeformuläret";
+
+"Close" = "Stänga";
+
+"Save" = "Spara";
+
+"Open Link" = "Öppen länk";
+
+"No internet connection available" = "Ingen internetanslutning tillgänglig";
+
+"Remember Password?" = "Kom ihåg lösenord?";
+
+"Forgot Password?" = "Glömt ditt lösenord?";
+
+"Please enter your registered email address or phone number, we will get back to you with the reset password confirmation (One Time Password)" = "Ange din registrerade e-postadress eller telefonnummer, vi återkommer till dig med Återställ lösenordsbekräftelsen (Engångslösenord)";

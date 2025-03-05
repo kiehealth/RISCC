@@ -1,0 +1,32 @@
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '11.0'
+
+target 'RISCC' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for RISCC
+  pod 'IQKeyboardManagerSwift'
+  pod 'SharkORM'
+  pod 'Toast-Swift'
+  pod 'MBProgressHUD'
+  pod 'Alamofire'
+  pod 'AlamofireImage'
+  pod 'SwiftyJSON'
+  pod 'DropDown'
+  pod "YoutubePlayer-in-WKWebView"
+#  pod 'CocoaLumberjack/Swift'
+  pod 'Cosmos'
+  pod 'ReachabilitySwift'
+  pod 'XLPagerTabStrip'
+
+  target 'RISCCTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'RISCCUITests' do
+    # Pods for testing
+  end
+
+end

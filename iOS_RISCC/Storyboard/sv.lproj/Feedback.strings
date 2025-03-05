@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "FEEDBACK"; ObjectID = "Sgu-Kp-SJl"; */
+"Sgu-Kp-SJl.text" = "Respons";
+
+/* Class = "UIButton"; normalTitle = "SUBMIT"; ObjectID = "cTx-fR-qIp"; */
+"cTx-fR-qIp.normalTitle" = "Skicka in";
+
+/* Class = "UITabBarItem"; title = "Feedback"; ObjectID = "dhP-Nd-cNs"; */
+"dhP-Nd-cNs.title" = "Respons";
+
+/* Class = "UITextView"; text = "Feedback"; ObjectID = "gWa-O0-zSf"; */
+"gWa-O0-zSf.text" = "Respons";
+
+/* Class = "UITextField"; placeholder = "Topic"; ObjectID = "lhe-L8-Jt2"; */
+"lhe-L8-Jt2.placeholder" = "Ämne";

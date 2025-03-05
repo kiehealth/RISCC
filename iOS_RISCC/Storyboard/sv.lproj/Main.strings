@@ -1,0 +1,96 @@
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "1OI-dl-ieT"; */
+"1OI-dl-ieT.text" = "Lösenord";
+
+/* Class = "UILabel"; text = "Sign In"; ObjectID = "2nL-ol-dKB"; */
+"2nL-ol-dKB.text" = "Logga in";
+
+/* Class = "UILabel"; text = "Last Name"; ObjectID = "4Is-VI-9an"; */
+"4Is-VI-9an.text" = "Efternamn";
+
+/* Class = "UILabel"; text = ":"; ObjectID = "6Bq-Xd-PwM"; */
+"6Bq-Xd-PwM.text" = ":";
+
+/* Class = "UIButton"; normalTitle = "Verify"; ObjectID = "Bhw-YS-A1J"; */
+"Bhw-YS-A1J.normalTitle" = "Kontrollera";
+
+/* Class = "UILabel"; text = ":"; ObjectID = "HQ1-Qn-11J"; */
+"HQ1-Qn-11J.text" = ":";
+
+/* Class = "UIButton"; normalTitle = "RESET PASSWORD"; ObjectID = "I8j-SF-lNf"; */
+"I8j-SF-lNf.normalTitle" = "Återställ lösenord";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "JJQ-5H-Ztz"; */
+"JJQ-5H-Ztz.normalTitle" = "Skicka in";
+
+/* Class = "UITextField"; placeholder = "+467XXXXXXXX"; ObjectID = "JKm-FE-uRG"; */
+"JKm-FE-uRG.placeholder" = "+467XXXXXXXX";
+
+/* Class = "UILabel"; text = "First Name"; ObjectID = "KPL-qM-uwR"; */
+"KPL-qM-uwR.text" = "Förnamn";
+
+/* Class = "UILabel"; text = "FORGOT PASSWORD ?"; ObjectID = "LzK-Gl-m6u"; */
+"LzK-Gl-m6u.text" = "Glömt ditt lösenord?";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "MkN-q4-XWm"; */
+"MkN-q4-XWm.placeholder" = "E-post";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "NWn-GG-KyV"; */
+"NWn-GG-KyV.text" = "Titel";
+
+/* Class = "UILabel"; text = ":"; ObjectID = "OIl-Dd-jIi"; */
+"OIl-Dd-jIi.text" = ":";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "Rd7-2Z-CTQ"; */
+"Rd7-2Z-CTQ.text" = "Beskrivning";
+
+/* Class = "UILabel"; text = ":"; ObjectID = "S3v-Br-TCe"; */
+"S3v-Br-TCe.text" = ":";
+
+/* Class = "UILabel"; text = "Phone"; ObjectID = "Slu-Hb-nEN"; */
+"Slu-Hb-nEN.text" = "Telefon";
+
+/* Class = "UILabel"; text = "Create new profile"; ObjectID = "WAc-Pq-3Y0"; */
+"WAc-Pq-3Y0.text" = "Skapa ny profil";
+
+/* Class = "UIButton"; normalTitle = "SKIP"; ObjectID = "aRS-g4-EDK"; */
+"aRS-g4-EDK.normalTitle" = "SKIP";
+
+/* Class = "UILabel"; text = "Confirm Password"; ObjectID = "aSx-Ew-Ntw"; */
+"aSx-Ew-Ntw.text" = "Bekräfta lösenord";
+
+/* Class = "UILabel"; text = "Enter Verification Code"; ObjectID = "b5u-ZB-hcr"; */
+"b5u-ZB-hcr.text" = "Ange verifieringskod";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "cP5-Fo-X5c"; */
+"cP5-Fo-X5c.placeholder" = "E-post";
+
+/* Class = "UILabel"; text = "Please enter your registered email address or\nphone number, we will get back to you with\nthe rest password confirmation OTP"; ObjectID = "dzm-jo-4JG"; */
+"dzm-jo-4JG.text" = "Ange din registrerade e-postadress eller telefonnummer, vi återkommer till dig med Återställ lösenordsbekräftelsen (Engångslösenord)";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "hl5-sn-B7p"; */
+"hl5-sn-B7p.placeholder" = "Lösenord";
+
+/* Class = "UITextField"; placeholder = "Verification Code"; ObjectID = "kLY-5t-aeG"; */
+"kLY-5t-aeG.placeholder" = "Verifierings kod";
+
+/* Class = "UILabel"; text = "Verification has been sent to your email. Please check your email and update your password."; ObjectID = "kYN-9i-Tzx"; */
+"kYN-9i-Tzx.text" = "Verification has been sent to your email. Please check your email and update your password.";
+
+/* Class = "UILabel"; text = ":"; ObjectID = "lIJ-7W-zo3"; */
+"lIJ-7W-zo3.text" = ":";
+
+/* Class = "UILabel"; text = "Enter Verification Code"; ObjectID = "s73-qo-3Tr"; */
+"s73-qo-3Tr.text" = "Ange verifieringskod";
+
+/* Class = "UITextField"; placeholder = "New Password"; ObjectID = "uZQ-io-9Gh"; */
+"uZQ-io-9Gh.placeholder" = "Nytt lösenord;
+
+/* Class = "UILabel"; text = "This mobile application is part of the study \"Psychological support for healthcare professionals and managers in connection with Covid-19\". There are different versions of the application that are assigned to different participants. Complete participant information is available to read and download in the app.\nI agree to use the application and that information about me is processed in the manner described in \"Information to research participants\"."; ObjectID = "wpD-Tt-S64"; */
+"wpD-Tt-S64.text" = "This mobile application is part of the study \"Psychological support for healthcare professionals and managers in connection with Covid-19\". There are different versions of the application that are assigned to different participants. Complete participant information is available to read and download in the app.\nI agree to use the application and that information about me is processed in the manner described in \"Information to research participants\".";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "xgX-GI-2j6"; */
+"xgX-GI-2j6.text" = "E-post";
+
+/* Class = "UILabel"; text = ":"; ObjectID = "zKx-ux-66S"; */
+"zKx-ux-66S.text" = ":";

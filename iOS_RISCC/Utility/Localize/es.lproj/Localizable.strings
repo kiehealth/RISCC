@@ -1,0 +1,286 @@
+
+"OK" = "OK";
+
+"Cancel" = "Cancelar";
+
+"Survey" = "Encuesta";
+
+"Notification" = "Notificación";
+
+"Link" = "Enlace";
+
+"Feedback" = "Feedback";
+
+"Note" = "Nota";
+
+"Welcome" = "Bienvenida";
+
+"Please enter your details below to sign in" = "Ingrese sus datos para iniciar sesión";
+
+"Email" = "Correo electrónico";
+
+"Password" = "Contraseña";
+
+"Sign In" = "Iniciar sesión";
+
+"Forgot Password" = "Has olvidado tu contraseña";
+
+"Don't have account?" = "¿No tienes cuenta?";
+
+"Sign Up" = "Inscribirse";
+
+"Loading..." = "cargando...";
+
+"Please grant all required permissions" = "Otorgue todos los permisos requeridos";
+
+"Contact Us" = "Contáctenos";
+
+"Privacy Policy" = "Política de privacidad";
+
+"About" = "Acerc de";
+
+"Change Password" = "Cambiar la contraseña";
+
+"Log Out" = "Cerrar sesión";
+
+"Edit Profile" = "Editar perfil";
+
+"Title" = "Título";
+
+"Contact Number" = "Número de contacto";
+
+"Search" = "Buscar";
+
+"Create new profile" = "Crear nuevo perfil";
+
+"First Name" = "Nombre";
+
+"Last Name" = "Apellido";
+
+"Phone" = "Teléfono";
+
+"Confirm Password" = "confirmar Contraseña";
+
+"Terms of Service" = "Términos de servicio";
+
+"Take photo" = "Tomar foto";
+
+"Select from gallery" = "Seleccionar de la galería";
+
+"Select picture" = "Seleccionar imagen";
+
+"First name is empty" = "El nombre está vacío";
+
+"Last name is empty" = "El apellido esta vacio";
+
+"Email is empty" = "El correo electrónico está vacío";
+
+"Phone is empty" = "El teléfono está vacío";
+
+"Invalid phone number" = "Numero de telefono invalido";
+
+"Password is empty" = "La contraseña esta vacía";
+
+"Confirm password is empty" = "Confirma que la contraseña está vacía";
+
+"Password doesn't match" = "La contraseña no coincide";
+
+"Profile image is empty" = "La imagen de perfil está vacía";
+
+"Invalid email address" = "Dirección de correo electrónico inválida";
+
+"Enter verification code" = "Ingrese el código de verificación";
+
+"Verify" = "Verificar";
+
+"Verification code has been sent to your email. Please check your email and update your password." = "Se ha enviado el código de verificación a su correo electrónico. Compruebe su correo electrónico y actualice su contraseña.";
+
+"Verification code doesn't match" = "El código de verificación no coincide";
+
+"Submit" = "Enviar";
+
+"Topic" = "Tema";
+
+"Posting feedback..." = "Publicando comentarios ...";
+
+"Description" = "Descripción";
+
+"Save Note" = "Guardar nota";
+
+"New note" = "Nueva nota";
+
+"Signing up. please wait...." = "Registrando. Espere por favor....";
+
+"Email or phone number with country code" = "Correo electrónico o número de teléfono con código de país";
+
+"Verification code will be sent at your email or phone number to reset your password." = "Se enviará un código de verificación a su correo electrónico o número de teléfono para restablecer su contraseña.";
+
+"Send Verification Code" = "Envíe el código de verificación";
+
+"Email or phone is empty" = "El correo electrónico o el teléfono están vacíos";
+
+"Invalid email or phone number" = "Correo electrónico o número de teléfono no válido";
+
+"Unable to request reset code" = "No se puede solicitar el código de restablecimiento";
+
+"Verification Code" = "Código de verificación";
+
+"Verification code has been sent to your email.Please check your email and" = "El código de verificación se ha enviado a su correo electrónico. Compruebe su correo electrónico";
+
+"New password" = "Nueva contraseña";
+
+"Confirm new password" = "Confirmar nueva contraseña";
+
+"Reset password" = "Restablecer la contraseña";
+
+"Unable to reset password" = "No se puede restablecer la contraseña";
+
+"Resetting password..." = "Restableciendo contraseña ...";
+
+"Unable to load web pages" = "No se pueden cargar las páginas web.";
+
+"Links" = "Enlaces";
+
+"Deleting note, please wait..." = "Eliminando nota, espere ...";
+
+"Loading notes..." = "cargando notas ...";
+
+"requesting Verification Code" = "solicitando código de verificación";
+
+"Old password" = "Contraseña anterior";
+
+"Unable to change password, please try again later" = "No se puede cambiar la contraseña. Vuelve a intentarlo más tarde.";
+
+"Change password..." = "Cambiar la contraseña...";
+
+"Old password is empty" = "La contraseña anterior está vacía";
+
+"New password is empty" = "La nueva contraseña está vacía";
+
+"Password changed. Please re-login again!!" = "Contraseña actualizada. ¡Por favor, vuelva a iniciar sesión!";
+
+"Update" = "Actualizar";
+
+"First Name" = "Actualizar";
+
+"Last Name" = "Apellido";
+
+"Unable to update profile" = "No se puede actualizar el perfil";
+
+"updating profile" = "actualizando perfil";
+
+"Unable to get data" = "No se pueden obtener datos";
+
+"Previous" = "Anterior";
+
+"Next" = "Próximo";
+
+"Your answer" = "Tu respuesta";
+
+"I agree to the" = "Estoy de acuerdo con la";
+
+"Loading questionnaire..." = "Cargando cuestionario ...";
+
+"Other" = "Otro";
+
+"Answer" = "Responder";
+
+"Loading answered questions..." = "Cargando preguntas respondidas ...";
+
+"No active questionnaire group found." = "No se encontró ningún grupo de cuestionario activo.";
+
+"Finish" = "Finalizar";
+
+"Edit Note" = "Editar nota";
+
+"Your notes will be discarded, want to exit?" = "Tus notas serán descartadas, ¿quieres salir?";
+
+"No" = "No";
+
+"Exit" = "Salida";
+
+"Note updated" = "Nota actualizada";
+
+"Unable to sync note." = "No se pudo sincronizar la nota.";
+
+"Note will be saved to server after internet connection is restored." = "La nota se guardará en el servidor después de que se restaure la conexión a Internet.";
+
+"Build version" = "Versión de compilación";
+
+"Do you want to logout?" = "¿Quieres cerrar sesión?";
+
+"No questions available for now!" = "¡No hay preguntas disponibles por ahora!";
+
+"No answer available!" = "¡No hay respuesta disponible!";
+
+"Verification code will be sent at your email to reset your password." = "El código de verificación se enviará a su correo electrónico para restablecer su contraseña.";
+
+"Project responsible" = "Responsable del proyecto";
+
+"Name" = "Nombre";
+
+"Phone" = "Teléfono";
+
+"Unable to logout" = "No se puede cerrar la sesión";
+
+"Saving note, please wait..." = "Guardando nota, por favor espere ...";
+
+"signing up..." = "registrando ...";
+
+"Verifying and signing up..." = "Verificando y registrando ...";
+
+"Sign up succeeded" = "Registro exitoso";
+
+"Permission Denied" = "Permiso denegado";
+
+"Without this permission this app is unable to upload your photo. Are you sure you want to deny this permission." = "Sin este permiso, esta aplicación no puede cargar su foto. ¿Está seguro de que desea denegar este permiso? ";
+
+"You need to allow Storage access in the phone settings" = "Debe permitir el acceso al almacenamiento en la configuración del teléfono";
+
+"I'M SURE" = "ESTOY SEGURO";
+
+"RETRY" = "INTENTAR OTRA VEZ";
+
+"NOT NOW" = "AHORA NO";
+
+"SETTINGS" = "AJUSTES";
+
+"Loading questionnaire list" = "Cargando lista de cuestionarios";
+
+"Gallery permission required" = "Se requiere permiso para la galería";
+
+"Camera permission required" = "Se requiere permiso de la cámara";
+
+"Success" = "Éxito";
+
+"Loading Categories" = "Cargando categorías";
+
+"Category" = "Categoría";
+
+"Edit Contact" = "Editar contacto";
+
+"You need to allow phone call access in the phone settings" = "Debe permitir el acceso a las llamadas telefónicas en la configuración del teléfono";
+
+"Without this permission this app is unable to make a phone call. Are you sure you want to deny this permission." = "Sin este permiso, esta aplicación no puede realizar una llamada telefónica. ¿Está seguro de que desea denegar este permiso? ";
+
+"Thank you for participating in this questionnaire" = "Gracias por participar en este cuestionario";
+
+"Finishing Questionnaire..." = "Finalización del cuestionario ...";
+
+"Call" = "Llamada";
+
+"Unable to finish questionnaire" = "No se pudo completar el cuestionario";
+
+"Close" = "Cerrar";
+
+"Save" = "Salvar";
+
+"Open Link" = "Enlace abierto";
+
+"No internet connection available" = "No hay conexión a internet disponible";
+
+"Remember Password?" = "¿Recordar contraseña?";
+
+"Forgot Password?" = "¿Has olvidado tu contraseña?";
+
+"Please enter your registered email address or phone number, we will get back to you with the reset password confirmation (One Time Password)" = "Por favor ingrese su dirección de correo electrónico registrada o número de teléfono, nos comunicaremos con usted para confirmar el restablecimiento de contraseña (Contraseña de un solo uso)";

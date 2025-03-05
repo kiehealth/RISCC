@@ -1,0 +1,33 @@
+
+/* Class = "UILabel"; text = "18 Jul"; ObjectID = "0Ks-lz-DOQ"; */
+"0Ks-lz-DOQ.text" = "18 Jul";
+
+/* Class = "UILabel"; text = "Premier Education Group"; ObjectID = "0yC-D3-ltW"; */
+"0yC-D3-ltW.text" = "Premier Education Group";
+
+/* Class = "UILabel"; text = "Safely Use Social Media"; ObjectID = "Ih3-0a-djI"; */
+"Ih3-0a-djI.text" = "Safely Use Social Media";
+
+/* Class = "UILabel"; text = "Notification"; ObjectID = "Kjv-Wu-iq3"; */
+"Kjv-Wu-iq3.text" = "Notificación";
+
+/* Class = "UITabBarItem"; title = "Notification"; ObjectID = "Tjv-nF-89A"; */
+"Tjv-nF-89A.title" = "Notificación";
+
+/* Class = "UILabel"; text = "Premier Education Group"; ObjectID = "VQ6-uF-cO1"; */
+"VQ6-uF-cO1.text" = "Premier Education Group";
+
+/* Class = "UIButton"; normalTitle = "Close"; ObjectID = "md0-zZ-LPT"; */
+"md0-zZ-LPT.normalTitle" = "Cerrar";
+
+/* Class = "UILabel"; text = "Safely Use Social Media"; ObjectID = "ngd-si-AQh"; */
+"ngd-si-AQh.text" = "Safely Use Social Media";
+
+/* Class = "UILabel"; text = "18 Jul"; ObjectID = "ptn-5I-Ymn"; */
+"ptn-5I-Ymn.text" = "18 Jul";
+
+/* Class = "UILabel"; text = "No notification available!"; ObjectID = "rFH-2o-24b"; */
+"rFH-2o-24b.text" = "No notification available!";
+
+/* Class = "UITextField"; placeholder = "Search"; ObjectID = "tXF-NT-PY8"; */
+"tXF-NT-PY8.placeholder" = "Buscar";

@@ -1,0 +1,36 @@
+Language:
+    https://docs.google.com/spreadsheets/d/11NyEQBR_cRRRU5BYLdsKQ_D2JRhPiupv7tOUKCE16z8/edit#gid=0
+    
+Swagger:
+    http://13.48.128.198:8080/swagger-ui.html#/
+
+Productin Server
+Username: roxana.martinez@ki.se
+Password: roxana
+
+Username: ios.tester@yopmail.com
+Password: password
+
+
+@Test User
+aleksandra.bujacz@ki.se
+password
+
+Username: sa@yopmail.com
+Password: password
+
+
+@Apple Test User
+Email: iostest@yopmail.com
+Password: iostest
+
+@Android Test User
+Email: androidtest@yopmail.com
+Password: androidtest
+
+
+
+
+API
+1) RisccRange> /api/setting/riscc_range
+2) Public > /api/public/calculate_riscc

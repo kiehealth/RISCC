@@ -1,0 +1,54 @@
+
+/* Class = "UITextField"; placeholder = "Your Answer"; ObjectID = "5ed-n6-PIB"; */
+"5ed-n6-PIB.placeholder" = "Ditt svar";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Bbt-ZP-7eJ"; */
+"Bbt-ZP-7eJ.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Ezo-HO-loF"; */
+"Ezo-HO-loF.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Your Answer"; ObjectID = "ULN-Xs-NQf"; */
+"ULN-Xs-NQf.placeholder" = "Ditt svar";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "YNx-qY-Eyx"; */
+"YNx-qY-Eyx.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Z4Z-X5-dzq"; */
+"Z4Z-X5-dzq.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "aMc-nN-xjS"; */
+"aMc-nN-xjS.normalTitle" = "Nästa";
+
+/* Class = "UILabel"; text = "Alder (antal ar)"; ObjectID = "ark-NG-fQ5"; */
+"ark-NG-fQ5.text" = "Alder (antal ar)";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cmY-8k-k9D"; */
+"cmY-8k-k9D.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Previous"; ObjectID = "fQq-98-eRk"; */
+"fQq-98-eRk.normalTitle" = "Tidigare";
+
+/* Class = "UILabel"; text = "Alder (antal ar)"; ObjectID = "gyc-Bg-01N"; */
+"gyc-Bg-01N.text" = "Alder (antal ar)";
+
+/* Class = "UITabBarItem"; title = "Survey"; ObjectID = "hiX-sP-i1d"; */
+"hiX-sP-i1d.title" = "Undersökning";
+
+/* Class = "UILabel"; text = "--Select Questionnaire--"; ObjectID = "iBo-r5-X7R"; */
+"iBo-r5-X7R.text" = "--Select Questionnaire--";
+
+/* Class = "UILabel"; text = "Alder (antal ar)"; ObjectID = "kZK-Od-pMj"; */
+"kZK-Od-pMj.text" = "Alder (antal ar)";
+
+/* Class = "UITextField"; placeholder = "Your Answer"; ObjectID = "u3Q-dK-h23"; */
+"u3Q-dK-h23.placeholder" = "Ditt svar";
+
+/* Class = "UILabel"; text = "No questions available for now!"; ObjectID = "xte-XX-d88"; */
+"xte-XX-d88.text" = "No questions available for now!";
+
+/* Class = "UILabel"; text = "Survey"; ObjectID = "yDO-JH-U7x"; */
+"yDO-JH-U7x.text" = "Undersökning";
+
+/* Class = "UILabel"; text = "Alder (antal ar)"; ObjectID = "zqv-4p-hCW"; */
+"zqv-4p-hCW.text" = "Alder (antal ar)";

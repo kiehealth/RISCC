@@ -1,0 +1,6 @@
+framework module Pods_RISCC {
+  umbrella header "Pods-RISCC-umbrella.h"
+
+  export *
+  module * { export * }
+}
