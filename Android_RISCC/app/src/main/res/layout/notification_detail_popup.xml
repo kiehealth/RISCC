@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/doubleConstantMargin"
+            android:paddingTop="@dimen/doubleConstantMargin"
+            android:paddingEnd="@dimen/doubleConstantMargin"
+            android:paddingBottom="@dimen/constantMargin"
+
+            >
+
+            <LinearLayout
+                android:id="@+id/detailLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/closeParentView"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/titleTV"
+                    style="@style/bold_font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Notification detail" />
+
+                <TextView
+                    android:id="@+id/detailTV"
+                    style="@style/regular_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/constantMargin"
+                    android:textColor="@color/secondary_text_color"
+                    tools:text="@string/loremIpsum" />
+
+                <TextView
+                    android:id="@+id/dateTV"
+                    style="@style/regular_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/constantMargin"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/secondary_text_color"
+                    android:textSize="10sp"
+                    tools:text="Notification detail" />
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/closeParentView"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/constantMargin"
+                android:layout_marginBottom="@dimen/halfConstantMargin"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="10dp">
+
+                <TextView
+                    android:id="@+id/closeTV"
+                    style="@style/regular_font"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="@string/close"
+                    android:textColor="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

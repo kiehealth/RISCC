@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/backIV"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
+            android:onClick="navigateBack"
+            android:padding="12dp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/halfConstantMargin"
+            android:layout_toEndOf="@id/backIV"
+            android:fontFamily="@font/lato_bold"
+            android:gravity="center_vertical"
+            android:text="@string/new_note"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="@dimen/halfConstantMargin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_regular"
+                android:text="@string/title"
+                android:textSize="@dimen/regularTextSize" />
+
+            <EditText
+                android:id="@+id/titleET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_white_background_no_border"
+                android:fontFamily="@font/lato_regular"
+                android:imeOptions="actionNext"
+                android:padding="8dp"
+                android:hint="@string/title"
+                android:textColor="@color/black"
+                android:textSize="@dimen/normal_text_size" />
+
+            <TextView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/lato_regular"
+                android:text="@string/description"
+                android:textSize="@dimen/regularTextSize" />
+
+            <EditText
+                android:id="@+id/descriptionET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/constantMargin"
+                android:background="@drawable/edittext_white_background_no_border"
+                android:fontFamily="@font/lato_regular"
+                android:gravity="start"
+                android:hint="@string/description"
+                android:imeOptions="actionDone"
+                android:lines="10"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/normal_text_size" />
+
+            <Button
+                android:id="@+id/saveNoteBtn"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/doubleConstantMargin"
+                android:layout_marginBottom="19dp"
+                android:background="@drawable/round_corner_grey_background"
+                android:fontFamily="@font/lato_regular"
+                android:text="@string/save"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

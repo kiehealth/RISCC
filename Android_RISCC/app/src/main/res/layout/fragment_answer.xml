@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.answer.Answer">
+
+
+        <RelativeLayout
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/halfConstantMargin"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="@dimen/halfConstantMargin"
+            android:background="@color/grey">
+
+            <TextView
+                android:id="@+id/spinnerTitleTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/halfConstantMargin"
+                android:layout_marginEnd="@dimen/halfConstantMargin"
+                android:layout_toStartOf="@+id/dropDownIV"
+                android:fontFamily="@font/lato_regular"
+                android:text="Please select one" />
+
+            <ImageView
+                android:id="@+id/dropDownIV"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/constantMargin"
+                android:rotation="270"
+                android:src="@drawable/ic_back"
+                app:tint="@color/black" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/answerRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner"
+            android:layout_marginTop="@dimen/constantMargin"
+            tools:itemCount="4"
+            tools:listitem="@layout/row_answer" />
+
+        <RelativeLayout
+            android:id="@+id/showRisccMessageContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/halfConstantMargin"
+            android:layout_marginEnd="@dimen/halfConstantMargin"
+            android:padding = "3dp"
+            android:background="@color/colorPrimary"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/showRisccMessage"
+                style="@style/bold_font"
+                android:text="sdfadfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/large_text_20sp"
+
+               />
+
+            <ImageView
+                android:id="@+id/moreInfoIcon"
+
+                android:layout_alignBottom="@id/showRisccMessage"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/showRisccMessage"
+                android:src="@drawable/link"
+
+               />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/noActiveQuestionnaireTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/halfConstantMargin"
+            android:layout_marginEnd="@dimen/halfConstantMargin"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/no_answer_available"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

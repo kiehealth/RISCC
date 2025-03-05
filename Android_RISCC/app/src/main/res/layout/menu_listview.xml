@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menuListView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:clickable="true"
+    android:focusable="true"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    tools:xmppService=".activity.Dashboard">
+
+    <!--    android:background="#77ffffff"-->
+    <LinearLayout
+        android:id="@+id/navigationListParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/constantMargin"
+            android:paddingTop="@dimen/constantPadding"
+            android:paddingRight="@dimen/constantMargin">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/logoutLayout"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:onClick="navigateMenu"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/nav_menu_color"
+                app:cardCornerRadius="6dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="6dp"
+                    android:src="@drawable/ic_logout" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/closeRootView"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+                android:onClick="hideMenu"
+                app:cardBackgroundColor="@color/nav_menu_color"
+                app:cardCornerRadius="6dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="6dp"
+                    android:src="@drawable/ic_close" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profileThumbRootView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/closeRootView"
+                app:cardCornerRadius="60dp"
+                app:cardElevation="10dp">
+
+                <ImageView
+                    android:id="@+id/profileThumb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_user_thumb" />
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/closeRootView"
+                android:layout_marginStart="@dimen/constantMargin"
+                android:layout_marginTop="15dp"
+                android:layout_toEndOf="@+id/profileThumbRootView"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nameTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:text="@string/app_name" />
+
+                <TextView
+                    android:id="@+id/phoneTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    tools:text="@string/dummyPhone" />
+
+                <TextView
+                    android:id="@+id/emailTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    tools:text="@string/dummyEmail" />
+
+                <RelativeLayout
+                    android:id="@+id/editProfileLayout"
+                    android:layout_width="118dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/halfConstantMargin"
+                    android:background="@drawable/round_corner_white_stroke_color_primary_background"
+                    android:onClick="navigateMenu"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/editProfileTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="@string/editProfile"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/photoEditIV"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/halfConstantMargin"
+                        android:layout_marginEnd="@dimen/halfConstantMargin"
+                        android:layout_toEndOf="@+id/editProfileTV"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_edit"
+                        app:tint="@color/white" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/constantMargin"
+            android:background="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/constantMargin"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/constantMargin"
+            android:paddingRight="@dimen/constantMargin"
+            android:paddingBottom="@dimen/constantPadding">
+
+            <LinearLayout
+                android:id="@+id/surveyRootLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/navItemHeight"
+                android:layout_marginTop="10dp"
+                android:onClick="navigateMenu"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="@dimen/navItemWidth"
+                    android:layout_height="@dimen/navItemWidth"
+                    android:background="@drawable/nav_drawable_item"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_survey"
+                        app:tint="@color/white" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/constantPadding"
+                    android:paddingEnd="@dimen/constantPadding"
+                    android:text="@string/survey"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/navItemTextSize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/notificationRootLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/navItemHeight"
+                android:layout_marginTop="10dp"
+                android:onClick="navigateMenu"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="@dimen/navItemWidth"
+                    android:layout_height="@dimen/navItemWidth"
+                    android:background="@drawable/nav_drawable_item"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_notification"
+                        app:tint="@color/white" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/constantPadding"
+                    android:paddingEnd="@dimen/constantPadding"
+                    android:text="@string/notification"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/navItemTextSize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/noteRootLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/navItemHeight"
+                android:layout_marginTop="10dp"
+                android:onClick="navigateMenu"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="@dimen/navItemWidth"
+                    android:layout_height="@dimen/navItemWidth"
+                    android:background="@drawable/nav_drawable_item"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_note"
+                        app:tint="@color/white" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/constantPadding"
+                    android:paddingEnd="@dimen/constantPadding"
+                    android:text="@string/note"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/navItemTextSize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinkRootLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/navItemHeight"
+                android:layout_marginTop="10dp"
+                android:onClick="navigateMenu"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="@dimen/navItemWidth"
+                    android:layout_height="@dimen/navItemWidth"
+                    android:background="@drawable/nav_drawable_item"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_link"
+                        app:tint="@color/white" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/constantPadding"
+                    android:paddingEnd="@dimen/constantPadding"
+                    android:text="@string/link"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/navItemTextSize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/answerRootLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/navItemHeight"
+                android:layout_marginTop="10dp"
+                android:onClick="navigateMenu"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="@dimen/navItemWidth"
+                    android:layout_height="@dimen/navItemWidth"
+                    android:background="@drawable/nav_drawable_item"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_answer"
+                        app:tint="@color/white" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/constantPadding"
+                    android:paddingEnd="@dimen/constantPadding"
+                    android:text="@string/answer"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/navItemTextSize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/feedbackRootLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/navItemHeight"
+                android:layout_marginTop="10dp"
+                android:onClick="navigateMenu"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="@dimen/navItemWidth"
+                    android:layout_height="@dimen/navItemWidth"
+                    android:background="@drawable/nav_drawable_item"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_feedback"
+                        app:tint="@color/white" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/constantPadding"
+                    android:paddingEnd="@dimen/constantPadding"
+                    android:text="@string/feedback"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/navItemTextSize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contactUsRootLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/navItemHeight"
+                android:layout_marginTop="10dp"
+                android:onClick="navigateMenu"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="@dimen/navItemWidth"
+                    android:layout_height="@dimen/navItemWidth"
+                    android:background="@drawable/nav_drawable_item"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_contact"
+                        app:tint="@color/white" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/constantPadding"
+                    android:paddingEnd="@dimen/constantPadding"
+                    android:text="@string/contactUs"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/navItemTextSize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/privacyPolicyRootLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/navItemHeight"
+                android:layout_marginTop="10dp"
+                android:onClick="navigateMenu"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="@dimen/navItemWidth"
+                    android:layout_height="@dimen/navItemWidth"
+                    android:background="@drawable/nav_drawable_item"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_privacy_policy"
+                        app:tint="@color/white" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/constantPadding"
+                    android:paddingEnd="@dimen/constantPadding"
+                    android:text="@string/privacyPolicy"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/navItemTextSize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/aboutRootLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/navItemHeight"
+                android:layout_marginTop="10dp"
+                android:onClick="navigateMenu"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="@dimen/navItemWidth"
+                    android:layout_height="@dimen/navItemWidth"
+                    android:background="@drawable/nav_drawable_item"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_about"
+                        app:tint="@color/white" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/constantPadding"
+                    android:paddingEnd="@dimen/constantPadding"
+                    android:text="@string/about"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/navItemTextSize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/changePasswordRootLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/navItemHeight"
+                android:layout_marginTop="10dp"
+                android:onClick="navigateMenu"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="@dimen/navItemWidth"
+                    android:layout_height="@dimen/navItemWidth"
+                    android:background="@drawable/nav_drawable_item"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_change_password"
+                        app:tint="@color/white" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/constantPadding"
+                    android:paddingEnd="@dimen/constantPadding"
+                    android:text="@string/changePassword"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/navItemTextSize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/logoutRootLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/navItemHeight"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="@dimen/constantMargin"
+                android:onClick="navigateMenu"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="@dimen/navItemWidth"
+                    android:layout_height="@dimen/navItemWidth"
+                    android:background="@drawable/nav_drawable_item"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_logout"
+                        app:tint="@color/white" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/constantPadding"
+                    android:paddingEnd="@dimen/constantPadding"
+                    android:text="@string/logout"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/navItemTextSize" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/buildVersionTV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/constantMargin"
+                android:layout_marginBottom="@dimen/constantMargin"
+                android:fontFamily="@font/lato_regular"
+                android:gravity="center_vertical"
+                android:text="@string/buildVersion"
+                android:textColor="@color/white"
+                android:textSize="@dimen/navItemTextSize" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

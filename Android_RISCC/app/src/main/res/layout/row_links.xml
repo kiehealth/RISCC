@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginLeft="@dimen/constantMargin"
+    android:layout_marginTop="@dimen/constantMargin"
+    android:layout_marginRight="@dimen/constantMargin"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <View
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginEnd="@dimen/constantMargin"
+        android:background="@drawable/circular_corner_view" />
+
+    <RelativeLayout
+        android:id="@+id/infoParentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/backgroundIV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
+                android:src="@mipmap/ic_launcher" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent" />
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/halfConstantPadding">
+
+
+            <RelativeLayout
+                android:id="@+id/titleParentLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/toolbarTitleTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="50dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/large_text_20sp"
+                    android:textStyle="bold"
+                    tools:text="@string/title" />
+
+                <ImageView
+                    android:id="@+id/linkIV"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="3dp"
+                    android:src="@drawable/link"
+                    app:tint="@color/textColor" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/descriptionTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleParentLayout"
+                android:layout_marginTop="@dimen/halfConstantMargin"
+                android:ellipsize="end"
+                android:fontFamily="@font/lato_regular"
+                android:maxLines="2"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/small_text_size"
+                tools:text="@string/app_name" />
+
+            <RelativeLayout
+                android:id="@+id/contactParentLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/descriptionTV"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/emailTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/lato_regular"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/email"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <LinearLayout
+                    android:id="@+id/contactLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/phonecall"
+                        app:tint="@color/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/contactTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="@font/lato_regular"
+                        android:text="@string/contactNumber"
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/normal_text_size" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="#aeaeae" />
+
+    </RelativeLayout>
+
+</LinearLayout>

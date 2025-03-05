@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="large_text_20sp">20sp</dimen>
+    <dimen name="normal_text_size">14sp</dimen>
+    <dimen name="medium_text_size">16sp</dimen>
+
+    <dimen name="extraSmallTextSize">10sp</dimen>
+
+    <dimen name="halfConstantPadding">8dp</dimen>
+    <dimen name="halfConstantMargin">8dp</dimen>
+    <dimen name="constantMargin">16dp</dimen>
+    <dimen name="doubleConstantMargin">32dp</dimen>
+
+    <dimen name="navItemWidth">36dp</dimen>
+    <dimen name="navItemHeight">36dp</dimen>
+    <dimen name="navSubItemHeight">40dp</dimen>
+    <dimen name="navItemTextSize">14sp</dimen>
+    <dimen name="constantPadding">16dp</dimen>
+    <dimen name="regularTextSize">14sp</dimen>
+    <dimen name="small_text_size">12dp</dimen>
+
+    <dimen name="questionTitleSize">20sp</dimen>
+    <dimen name="questionDescSize">16sp</dimen>
+    <dimen name="questionAnswerSize">14sp</dimen>
+    <dimen name="popup_width">300</dimen>
+    <dimen name="popup_height">300</dimen>
+    <dimen name="error_msg">30</dimen>
+</resources>

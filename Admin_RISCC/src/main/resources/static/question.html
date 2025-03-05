@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+    <!-- Bootstrap CSS, Fontawesome CSS -->
+    <link href="/lib/bootstrap/bootstrap.4.2.1.min.css" rel="stylesheet">
+    <link href="/lib/fontawesome/css/all.5.6.3.min.css" rel="stylesheet">
+    <link href="/lib/bootstrap.selectpicker.1.13.2/bootstrap-select.min.css" rel="stylesheet">
+    <link href="/lib/DataTables/datatables.min.css" rel="stylesheet">
+    <!-- Scrollbar Custom CSS -->
+    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"
+          rel="stylesheet">-->
+    <link href="/lib/nav.min.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+
+    <title>RISCC | Question</title>
+</head>
+<body class="container-fluid">
+
+<!-- Navigation Menu -->
+<!-- Sidebar Nav Menu trying out -->
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar"></nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <div class="d-flex align-content-center">
+                    <button class="btn btn-lg red" id="sidebarCollapse" type="button">
+                        <i class="fas fa-bars"></i>
+                        <span></span>
+                    </button>
+                </div>
+
+                <div class="d-flex align-items-center ml-auto">
+                    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                            class="btn btn-dark d-inline-block d-lg-none ml-auto" data-target="#navbarSupportedContent"
+                            data-toggle="collapse" type="button">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" id="idButtonLogout"><span class="color-red"><i
+                                        class="fas fa-sign-out-alt"></i> Logout</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Questionnaire -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="float-left">Questionnaire</h5>
+                <button class="btn btn-link float-right" id="idBtnPopAddQuestionnaire"><i
+                        class="fas fa-plus-circle"></i>
+                    Questionnaire
+                </button>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped table-bordered table-hover" id="idTableQuestionnaire">
+                    <thead>
+                    <tr>
+                        <th>SN</th>
+                        <th>Title</th>
+                        <th>Number of Questions</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot></tfoot>
+                </table>
+            </div>
+        </div>
+
+        <!-- Modal for Questionnaire -->
+        <div class="modal fade" data-backdrop="static" id="idModalQuestionnaire" role="dialog" tabindex="-1">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"></h5>
+                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Questionnaire Form Add -->
+                        <form id="idFormQuestionnaireAdd">
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Title *</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" name="title" type="text">
+                                </div>
+                            </div>
+                            <div class="offset-2">
+                                <button class="btn btn-primary" name="add" type="submit">Add</button>
+                            </div>
+                        </form>
+                        <!-- End -->
+
+                        <!-- Questionnaire Form Update -->
+                        <form id="idFormQuestionnaireUpdate">
+                            <input name="id" type="hidden">
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Title *</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" name="title" type="text">
+                                </div>
+                            </div>
+                            <div class="offset-2">
+                                <button class="btn btn-primary" name="update" type="submit">Update</button>
+                            </div>
+                        </form>
+                        <!-- End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End -->
+
+
+        <!-- Questionnaire delete -->
+        <div class="modal fade" id="idModalQuestionnaireDelete" role="dialog" tabindex="-1">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">Delete Questionnaire</h5>
+                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete this questionnaire? You won't be able to recover it.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
+                        <button class="btn btn-primary" id="idBtnQuestionnaireDelete" type="button">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End -->
+
+        <!-- Questionnaire -->
+
+
+        <div class="card mt-5">
+            <div class="card-header clearfix">
+                <h5 class="float-left">Question</h5>
+                <button class="btn btn-link float-right" id="idBtnPopAddQuestion"><i class="fas fa-plus-circle"></i>
+                    Question
+                </button>
+            </div>
+
+            <div class="row pt-4 pb-3">
+                <button class="pl-5 btn btn-link" id="idBtnQuestionTemplate"><i
+                        class="fas fa-file-export"></i>
+                    Template
+                </button>
+                <button class="btn btn-link" id="idBtnPopImportQuestion"><i class="fas fa-file-import"></i>
+                    Import
+                    Question
+                </button>
+            </div>
+
+            <select class="selectpicker show-tick" id="questionnaireFilter" title="Select Questionnaire"></select>
+            <!--<form class="mt-3 ml-2" id="idFormQuestionFilter">
+                <button class="btn btn-primary" name="questionFilter" type="submit">Filter</button>
+            </form>-->
+            <div class="card-body">
+                <h5 id="questionTableCaption"></h5>
+                <table class="table table-striped table-bordered table-hover" id="idTableQuestion">
+                    <thead>
+                    <tr>
+                        <th>SN</th>
+                        <th>Title</th>
+                        <th>Body</th>
+                        <th>Type</th>
+                        <th>Questionnaire [Order]</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot></tfoot>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- End -->
+
+
+<!-- Modal for Question -->
+<div class="modal fade" data-backdrop="static" id="idModalQuestion" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <!-- Question Show -->
+                <div id="idQuestionShow">
+                    <div class="row">
+                        <p class="col-sm-3 my-label">Questionnaire [Order]</p>
+                        <p class="col-sm-9 my-value" id="idQuestionnaireShow"></p>
+                    </div>
+                    <div class="row">
+                        <p class="col-sm-3 my-label">Title</p>
+                        <p class="col-sm-9 my-value" id="idTitleShow"></p>
+                    </div>
+                    <div class="row">
+                        <p class="col-sm-3 my-label">Body</p>
+                        <p class="col-sm-9 my-value" id="idBodyShow"></p>
+                    </div>
+                    <div class="row">
+                        <p class="col-sm-3 my-label">Question Type</p>
+                        <p class="col-sm-9 my-value" id="idQuestionTypeShow"></p>
+                    </div>
+                    <hr>
+                    <div class="row" id="idQuestionOptionShow">
+                    </div>
+                </div>
+                <!-- End -->
+
+                <!-- Question Form Add -->
+                <form id="idFormQuestionAdd">
+
+                    <!-- Questionnaire with display Order -->
+                    <div class="form-group row" id="idQuestionnaireContainerAdd">
+                        <label class="col-sm-3 col-form-label">Questionnaire</label>
+                        <div class="col-sm-9 border rounded">
+                            <button class="btn btn-link" id="idBtnAddQuestionnaireAdd">Add Questionnaire<i
+                                    class="fas fa-plus-circle"></i>
+                            </button>
+                            <div id="idQuestionnaireAdditionAdd">
+                                <div class="row m-1 questionQuestionnaire">
+                                    <select class="selectpicker show-tick mr-1"
+                                            name="questionnaire"
+                                            title="Select">
+                                    </select>
+                                    <input class="form-control col-sm-4" name="questionnaireDisplayOrder"
+                                           placeholder="Display Order" type="text">
+                                    <button class="btn btn-link removeQuestionnaire"><i
+                                            class="fas fa-times-circle color-red"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Title *</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" name="title" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Body</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" name="body" type="text"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Question Type</label>
+                        <div class="col-sm-9">
+                            <select class="selectpicker show-tick" data-width="100%"
+                                    name="questionType"
+                                    title="Select">
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Question Options -->
+                    <div class="form-group row" id="idOptionContainerAdd">
+                        <label class="col-sm-3 col-form-label">Options</label>
+                        <div class="col-sm-9 border rounded">
+                            <button class="btn btn-link" id="idBtnAddOptionAdd">Add Option <i
+                                    class="fas fa-plus-circle"></i>
+                            </button>
+                            <div id="idOptionAdditionAdd">
+                                <div class="questionOption border border-dark rounded container m-2">
+                                    <div class="row p-1">
+                                        <input class="form-control col-sm-4" name="optionTitle"
+                                               placeholder="Title" type="text">
+                                        <input class="form-control col-sm-2" name="optionValue"
+                                               placeholder="Value" type="number">
+                                        <textarea class="form-control col-sm-5" name="optionMessage"
+                                                  placeholder="Email body message"></textarea>
+                                        <button class="btn btn-link removeOption"><i
+                                                class="fas fa-times-circle color-red"></i></button>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-3 col-form-label"> RISCC Value:</label>
+                                        <input class="form-control col-sm-8 ml-3" name="risccValue"
+                                               placeholder="riscc value" type="number">
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-3 col-form-label">Notify User:</label>
+                                        <select class="selectpicker show-tick col-sm-9"
+                                                name="notifyUser" title="Notify User">
+                                            <option value="YES">Yes</option>
+                                            <option value="NO">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-form-label col-sm-3">Other Email:</label>
+                                        <input class="form-control col-sm-8 ml-3" name="otherEmail"
+                                               placeholder="Other Email" type="email">
+                                        <label class="col-form-label col-sm-3">Notify Other:</label>
+                                        <select class="selectpicker show-tick col-sm-9"
+                                                data-placement="top" data-toggle="tooltip" name="notifyOther"
+                                                title="Notify Other">
+                                            <option value="YES">Yes</option>
+                                            <option value="NO">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="offset-3">
+                        <button class="btn btn-primary" name="add" type="submit">Add</button>
+                    </div>
+                </form>
+                <!-- End -->
+
+                <!-- Question Form Update -->
+                <form id="idFormQuestionUpdate">
+                    <input name="id" type="hidden">
+                    <!-- Questionnaire with display Order -->
+                    <div class="form-group row" id="idQuestionnaireContainerUpdate">
+                        <label class="col-sm-3 col-form-label">Questionnaire</label>
+                        <div class="col-sm-9 border rounded">
+                            <button class="btn btn-link" id="idBtnAddQuestionnaireUpdate">Add Questionnaire<i
+                                    class="fas fa-plus-circle"></i>
+                            </button>
+                            <div id="idQuestionnaireAdditionUpdate">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Title *</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" name="title" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Body</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" name="body" type="text"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Question Type</label>
+                        <div class="col-sm-9">
+                            <select class="selectpicker show-tick" data-width="100%"
+                                    name="questionType"
+                                    title="Select">
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row" id="idOptionContainerUpdate">
+                        <label class="col-sm-3 col-form-label">Options</label>
+                        <div class="col-sm-9 border rounded">
+                            <button class="btn btn-link" id="idBtnAddOptionUpdate">Add Option <i
+                                    class="fas fa-plus-circle"></i>
+                            </button>
+                            <div id="idOptionAdditionUpdate"></div>
+                        </div>
+                    </div>
+                    <div class="offset-3">
+                        <button class="btn btn-primary" name="update" type="submit">Update</button>
+                    </div>
+                </form>
+                <!-- End -->
+
+                <form id="idFormQuestionImport">
+                    <div class="form-group border">
+                        <input accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+                               class="btn btn-default btn-block" id="idFileQuestionImport"
+                               name="excelFile"
+                               type="file">
+                    </div>
+                    <button class="btn btn-primary" name="import" type="submit">Import</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End -->
+
+<!-- Question delete -->
+<div class="modal fade" id="idModalQuestionDelete" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Question</h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <p>Are you sure you want to delete this question? You won't be able to recover it.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
+                <button class="btn btn-primary" id="idBtnQuestionDelete" type="button">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End -->
+
+
+<!-- Modal for alert messages -->
+<div class="modal fade" id="idModalAlert" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Response</h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="/lib/jquery/jquery-3.3.1.min.js"></script>
+<script src="/lib/popper/popper.min.js"></script>
+<script src="/lib/bootstrap/bootstrap.4.2.1.min.js"></script>
+<script src="/lib/jquery_validation/jquery.validate.1.19.0.min.js"></script>
+<script src="/lib/bootstrap.selectpicker.1.13.2/bootstrap-select.min.js"></script>
+<script src="/lib/DataTables/datatables.min.js"></script>
+<script src="/js/util/DataTableUtil.js"></script>
+<!-- jQuery Custom Scroller CDN -->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>-->
+<script src="/lib/nav.min.js" type="text/javascript"></script>
+<script src="/js/view/QuestionView.js" type="module"></script>
+<script src="/js/view/QuestionnaireView.js" type="module"></script>
+</body>
+</html>

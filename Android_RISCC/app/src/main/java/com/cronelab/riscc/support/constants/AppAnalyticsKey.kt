@@ -1,0 +1,27 @@
+package com.cronelab.riscc.support.constants
+
+const val NOTIFICATION_IN = "NOTIFICATION_IN"
+const val NOTIFICATION_OUT = "NOTIFICATION_OUT"
+
+const val NOTIFICATION_DETAIL_IN = "NOTIFICATION_DETAIL_IN"
+const val NOTIFICATION_DETAIL_OUT = "NOTIFICATION_DETAIL_OUT"
+
+const val NOTE_IN = "NOTE_IN"
+const val NOTE_OUT = "NOTE_OUT"
+
+const val NOTE_DETAIL_IN = "NOTE_DETAIL_IN"
+const val NOTE_DETAIL_OUT = "NOTE_DETAIL_OUT"
+
+const val MENU_IN = "MENU_IN"
+const val MENU_OUT = "MENU_OUT"
+
+const val LINK_IN = "LINK_IN"
+const val LINK_OUT = "LINK_OUT"
+
+const val LINK_DETAIL_IN = "LINK_DETAIL_IN"
+const val LINK_DETAIL_OUT = "LINK_DETAIL_OUT"
+
+const val FEEDBACK_IN = "FEEDBACK_IN"
+const val FEEDBACK_OUT = "FEEDBACK_OUT"
+
+

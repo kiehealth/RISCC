@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/backIV"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:onClick="navigateBack"
+        android:padding="15dp"
+        android:src="@drawable/ic_back"
+        app:tint="@color/white" />
+
+
+    <RelativeLayout
+        android:layout_below="@id/backIV"
+        android:id="@+id/logoLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/updateProfileIV"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/circle_colored_background"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_user_placeholder" />
+
+
+        <ImageView
+            android:id="@+id/cancelProfileIV"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignEnd="@+id/updateProfileIV"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/circle_stroke_white_background"
+            android:contentDescription="@string/app_name"
+            android:onClick="removeImage"
+            android:padding="10dp"
+            android:src="@drawable/cancel" />
+
+        <ImageView
+            android:id="@+id/changeProfileIV"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignEnd="@+id/updateProfileIV"
+            android:layout_alignBottom="@+id/updateProfileIV"
+            android:background="@drawable/circle_stroke_white_background"
+            android:contentDescription="@string/app_name"
+            android:onClick="checkPermission"
+            android:padding="8dp"
+            android:src="@drawable/ic_colored_camera" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/logoLayout"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/login_input_background">
+
+        <RelativeLayout
+            android:id="@+id/updateProfileLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/toolbarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="-2dp"
+                android:orientation="vertical"
+                android:paddingLeft="32dp"
+                android:paddingTop="60dp"
+                android:paddingRight="32dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/firstName" />
+
+                <EditText
+                    android:id="@+id/firstNameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edittext_bottom_border"
+                    android:fontFamily="@font/lato_regular"
+                    android:hint="@string/first_name"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/normal_text_size" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/constantMargin"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/lastname" />
+
+                <EditText
+                    android:id="@+id/lastnameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edittext_bottom_border"
+                    android:fontFamily="@font/lato_regular"
+                    android:hint="@string/last_name"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/constantMargin"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/email" />
+
+                <EditText
+                    android:id="@+id/emailET"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edittext_bottom_border"
+                    android:fontFamily="@font/lato_regular"
+                    android:hint="@string/email"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/constantMargin"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/phone" />
+
+                <EditText
+                    android:id="@+id/phoneNumberET"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edittext_bottom_border"
+                    android:fontFamily="@font/lato_regular"
+                    android:hint="@string/phone"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:inputType="phone"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <Button
+                    android:id="@+id/updateBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/round_edges_button_primary_colored_background"
+                    android:fontFamily="@font/lato_regular"
+                    android:onClick="updateProfile"
+                    android:text="@string/update"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/medium_text_size" />
+
+                <Button
+                    android:id="@+id/cancelBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/round_edges_button_primary_colored_background"
+                    android:fontFamily="@font/lato_regular"
+                    android:onClick="navigateBack"
+                    android:text="@string/cancel"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/medium_text_size"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

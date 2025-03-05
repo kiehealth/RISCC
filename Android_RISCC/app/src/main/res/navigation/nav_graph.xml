@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_survey">
+
+    <fragment
+        android:id="@+id/navigation_survey"
+        android:name="com.cronelab.riscc.ui.questionnaire.Questionnaire"
+        android:label="fragment_survey"
+        tools:layout="@layout/fragment_questionnaire" />
+    <fragment
+        android:id="@+id/navigation_feedback"
+        android:name="com.cronelab.riscc.ui.feedback.Feedback"
+        android:label="Feedback" />
+    <fragment
+        android:id="@+id/navigation_note"
+        android:name="com.cronelab.riscc.ui.note.Note"
+        android:label="Note" >
+        <action
+            android:id="@+id/action_navigation_note_to_addNote"
+            app:destination="@id/addNote" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_links"
+        android:name="com.cronelab.riscc.ui.links.view.Links"
+        android:label="fragment_links"
+        tools:layout="@layout/fragment_links" />
+    <fragment
+        android:id="@+id/navigation_notification"
+        android:name="com.cronelab.riscc.ui.notification.Notification"
+        android:label="notification_fragment"
+        tools:layout="@layout/notification_fragment" />
+    <fragment
+        android:id="@+id/addNote"
+        android:name="com.cronelab.riscc.ui.note.AddNote"
+        android:label="AddNote" />
+    <fragment
+        android:id="@+id/changePassword"
+        android:name="com.cronelab.riscc.ui.auth.login.ChangePassword"
+        android:label="ChangePassword" />
+    <fragment
+        android:id="@+id/navigation_answer"
+        android:name="com.cronelab.riscc.ui.answer.Answer"
+        android:label="fragment_answer"
+        tools:layout="@layout/fragment_answer" />
+</navigation>

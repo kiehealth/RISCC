@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/constantMargin"
+    android:layout_marginTop="@dimen/constantMargin"
+    android:gravity="center"
+    android:layout_marginRight="@dimen/constantMargin"
+    android:orientation="horizontal"
+    app:cardCornerRadius="10dp">
+
+
+    <View
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginEnd="@dimen/constantMargin"
+        android:background="@drawable/circular_corner_view" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/dataLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/halfConstantPadding">
+
+            <LinearLayout
+                android:id="@+id/headerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/halfConstantMargin"
+                android:layout_toStartOf="@id/dateTV"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/titleTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/app_name"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/large_text_20sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/dateTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/constantMargin"
+                android:fontFamily="@font/lato_regular"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/extraSmallTextSize"
+                tools:text="18 july" />
+
+            <TextView
+                android:id="@+id/descriptionTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/headerLayout"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/halfConstantMargin"
+                android:ellipsize="end"
+                android:fontFamily="@font/lato_regular"
+                android:lines="2"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/small_text_size"
+                tools:text="@string/dummyDesc" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_marginTop="@dimen/constantMargin"
+            android:layout_below="@+id/dataLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#aeaeae"
+            />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

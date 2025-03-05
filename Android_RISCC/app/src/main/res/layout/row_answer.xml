@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rowParentRL"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/halfConstantPadding"
+    android:paddingTop="@dimen/halfConstantPadding"
+    android:paddingRight="@dimen/halfConstantPadding">
+
+
+    <TextView
+        android:id="@+id/titleTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_bold"
+        android:textSize="@dimen/regularTextSize"
+        tools:text="@string/title" />
+
+    <TextView
+        android:id="@+id/detailTV"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/regularTextSize"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleTV"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/lato_regular"
+        tools:text="@string/title" />
+
+    <TextView
+        android:id="@+id/answerTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/regularTextSize"
+        android:layout_below="@+id/detailTV"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/lato_regular"
+        tools:text="@string/title" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/answerTV"
+        android:layout_marginTop="8dp"
+        android:background="@color/grey" />
+
+
+</RelativeLayout>

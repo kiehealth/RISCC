@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/constantPadding"
+    tools:xmppService=".fragments.questionaire.Questionaire_Multiple_Selection">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/parentQuestionTitleTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/halfConstantMargin"
+            android:fontFamily="@font/lato_bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/questionTitleSize"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="@string/loremIpsum" />
+
+        <TextView
+            android:id="@+id/parentQuestionBodyTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/parentQuestionTitleTV"
+            android:layout_marginBottom="@dimen/constantMargin"
+            android:fontFamily="@font/lato_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/questionDescSize"
+            android:visibility="gone"
+            tools:text="@string/loremIpsum" />
+
+
+        <TextView
+            android:id="@+id/titleTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/parentQuestionBodyTV"
+            android:layout_marginBottom="@dimen/halfConstantMargin"
+            android:fontFamily="@font/lato_bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/questionTitleSize"
+            android:textStyle="bold"
+            tools:text="@string/loremIpsum" />
+
+
+        <TextView
+            android:id="@+id/descriptionTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleTV"
+            android:layout_marginTop="@dimen/constantMargin"
+            android:fontFamily="@font/lato_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/questionDescSize"
+            tools:text="@string/loremIpsum" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descriptionTV">
+
+            <LinearLayout
+                android:id="@+id/radioGroupParentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/constantMargin"
+                android:orientation="vertical" />
+        </ScrollView>
+
+    </RelativeLayout>
+
+</ScrollView>

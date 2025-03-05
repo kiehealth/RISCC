@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/constantPadding">
+
+    <RelativeLayout
+        android:id="@+id/parentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/parentQuestionTitleTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:textSize="@dimen/questionTitleSize"
+            tools:text="@string/loremIpsum" />
+
+        <TextView
+            android:id="@+id/parentQuestionBodyTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/parentQuestionTitleTV"
+            android:visibility="gone"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/lato_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/questionDescSize"
+            tools:text="@string/loremIpsum" />
+
+
+        <TextView
+            android:id="@+id/titleTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/parentQuestionBodyTV"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/lato_bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/questionTitleSize"
+            tools:text="@string/loremIpsum" />
+
+        <TextView
+            android:id="@+id/descriptionTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleTV"
+            android:layout_marginTop="@dimen/constantMargin"
+            android:fontFamily="@font/lato_regular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/questionDescSize"
+            tools:text="@string/loremIpsum" />
+
+<!--        android:background="@drawable/round_corner_edittext_grey_background"-->
+
+
+        <EditText
+            android:id="@+id/answerET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/descriptionTV"
+            android:layout_marginTop="@dimen/constantMargin"
+            android:background="@drawable/edittext_white_background_no_border"
+            android:fontFamily="@font/lato_regular"
+            android:hint="@string/yourAnswer"
+            android:padding="10dp"
+            android:imeOptions="actionDone"
+            android:textSize="@dimen/questionAnswerSize" />
+
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/constantPadding">
+
+    <TextView
+        android:id="@+id/parentQuestionTitleTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_bold"
+        android:textColor="@color/black"
+        android:textSize="@dimen/questionTitleSize"
+        android:visibility="gone"
+        tools:text="@string/loremIpsum" />
+
+    <TextView
+        android:id="@+id/parentQuestionBodyTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/parentQuestionTitleTV"
+        android:layout_marginTop="@dimen/halfConstantMargin"
+        android:fontFamily="@font/lato_regular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/questionDescSize"
+        android:visibility="gone"
+        tools:text="@string/loremIpsum" />
+
+
+    <TextView
+        android:id="@+id/titleTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/parentQuestionBodyTV"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/constantMargin"
+        android:fontFamily="@font/lato_bold"
+        android:textColor="@color/black"
+        android:textSize="@dimen/questionTitleSize"
+        tools:text="@string/loremIpsum" />
+
+    <TextView
+        android:id="@+id/descriptionTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleTV"
+        android:layout_marginTop="@dimen/constantMargin"
+        android:fontFamily="@font/lato_regular"
+        android:text="@string/loremIpsum"
+        android:textColor="@color/black"
+        android:textSize="@dimen/questionDescSize" />
+
+</RelativeLayout>

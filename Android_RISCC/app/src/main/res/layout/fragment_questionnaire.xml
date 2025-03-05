@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/questionnaireRootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.questionnaire.Questionnaire">
+
+    <RelativeLayout
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/halfConstantMargin"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/halfConstantMargin"
+
+        android:background="@drawable/round_corner_lt_grey_background"
+        android:paddingStart="@dimen/halfConstantPadding">
+
+        <TextView
+            android:id="@+id/spinnerTitleTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/halfConstantMargin"
+            android:layout_marginEnd="@dimen/halfConstantMargin"
+            android:layout_toStartOf="@+id/dropDownIV"
+            android:fontFamily="@font/lato_regular"
+            android:padding="4dp"
+            android:text="Please select one"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/dropDownIV"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/constantMargin"
+            android:rotation="270"
+            android:src="@drawable/ic_back"
+            app:tint="@color/black" />
+
+    </RelativeLayout>
+
+
+    <com.cronelab.riscc.support.common.extension.customViews.CustomViewPager
+        android:id="@+id/viewpager"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/controllerLayout"
+        android:layout_below="@id/spinner"
+        android:layout_marginTop="@dimen/constantMargin" />
+
+
+    <LinearLayout
+        android:id="@+id/controllerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+
+        android:orientation="horizontal">
+
+        <!--        android:background="#e0e0e0"-->
+
+        <LinearLayout
+            android:id="@+id/previousBtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_left_arrow"
+                app:tint="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_regular"
+                android:paddingLeft="5dp"
+                android:text="@string/previous"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <TextView
+                android:id="@+id/pageIndexTV"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/lato_regular"
+                android:gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="7/4" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nextBtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="6dp">
+
+                <TextView
+                    android:id="@+id/nextTV"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:gravity="center"
+                    android:paddingRight="10dp"
+                    android:text="@string/next"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_right_arrow"
+                android:visibility="gone"
+                app:tint="@color/colorPrimary" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/welcomeMessageContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/welcomeMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/navItemHeight"
+            android:focusable="true"
+            android:fontFamily="@font/lato_regular"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="28sp"
+            android:visibility="visible" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/proceed"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:clickable="true"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="6dp">
+
+            <TextView
+                android:id="@+id/proceedText"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:fontFamily="@font/lato_regular"
+                android:gravity="center"
+                android:paddingRight="10dp"
+                android:text="@string/ok"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/noActiveQuestionnaireTV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/halfConstantMargin"
+        android:layout_marginEnd="@dimen/halfConstantMargin"
+        android:background="#ffffff"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/lato_regular"
+        android:gravity="center"
+        android:text="@string/no_questions_available_for_now"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/thankYouTV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/spinner"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/halfConstantMargin"
+        android:layout_marginEnd="@dimen/halfConstantMargin"
+        android:background="#ffffff"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/lato_regular"
+        android:gravity="center"
+        android:text="@string/thank_you_for_participating_in_this_questionnaire"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/noQuestionnaireTV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/controllerLayout"
+        android:layout_below="@id/spinner"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/halfConstantMargin"
+        android:layout_marginEnd="@dimen/halfConstantMargin"
+        android:background="#ffffff"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/lato_regular"
+        android:gravity="center"
+        android:text="@string/no_questions_available_for_now"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+</RelativeLayout>

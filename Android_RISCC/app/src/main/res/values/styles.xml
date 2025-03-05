@@ -1,0 +1,37 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="regular_font" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="fontFamily">@font/lato_regular</item>
+        <!--        <item name="android:textStyle">normal</item>-->
+    </style>
+
+    <style name="bold_font" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="fontFamily">@font/lato_bold</item>
+        <!--        <item name="android:textStyle">bold</item>-->
+    </style>
+
+    <style name="brandon_bold_font" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/brandon_grotesque_bold</item>
+        <item name="fontFamily">@font/brandon_grotesque_bold</item>
+        <!--        <item name="android:textStyle">bold</item>-->
+
+    </style>
+
+
+    <style name="BottomNavigation">
+        <item name="android:itemBackground">@drawable/bottom_navigation_background</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">6sp</item>
+    </style>
+
+</resources>
