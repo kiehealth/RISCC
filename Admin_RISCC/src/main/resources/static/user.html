@@ -6,8 +6,9 @@
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
     <!-- Bootstrap CSS, Fontawesome CSS -->
-    <link href="/lib/bootstrap/bootstrap.4.2.1.min.css" rel="stylesheet">
-    <link href="/lib/fontawesome/css/all.5.6.3.min.css" rel="stylesheet">
+    <link href="/lib/bootstrap/bootstrap.5.3.3.min.css" rel="stylesheet">
+    <link href="/lib/fontawesome/css/all.6.7.1.min.css" rel="stylesheet">
+    <link href="lib/choices/choices.min.css" rel="stylesheet">
     <link href="/lib/bootstrap.selectpicker.1.13.2/bootstrap-select.min.css" rel="stylesheet">
     <link href="/lib/DataTables/datatables.min.css" rel="stylesheet">
     <!-- Scrollbar Custom CSS -->
@@ -32,7 +33,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                     <div class="d-flex align-content-center">
-                    <button class="btn btn-lg red" id="sidebarCollapse" type="button">
+                    <button class="btn btn-lg navMenuHideShowButton" id="sidebarCollapse" type="button">
                         <i class="fas fa-bars"></i>
                         <span></span>
                     </button>
@@ -40,19 +41,20 @@
 
                 <div class="d-flex align-items-center ml-auto">
                     <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                            class="btn btn-dark d-inline-block d-lg-none ml-auto" data-target="#navbarSupportedContent"
-                            data-toggle="collapse" type="button">
+                            class="btn btn-dark d-inline-block d-lg-none ml-auto"
+                            data-bs-target="#navbarSupportedContent"
+                            data-bs-toggle="collapse" type="button">
                         <i class="fas fa-align-justify"></i>
                     </button>
-                </div>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="idButtonLogout"><span class="color-red"><i
-                                    class="fas fa-sign-out-alt"></i> Logout</span></a>
-                        </li>
-                    </ul>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" id="idButtonLogout"><span class="color-red"><i
+                                        class="fas fa-sign-out-alt"></i> Logout</span></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -60,17 +62,20 @@
         <div class="card">
             <div class="card-header">
 
-                <h5 class="float-left">User</h5>
-                <button class="btn btn-link float-right" id="idBtnPopAddUser"><i class="fas fa-plus-circle"></i>
+                <h5 class="float-start">User</h5>
+                <button class="btn float-end" id="idBtnPopAddUser">
+                    <i class="fas fa-plus-circle"></i>
                     User
                 </button>
 
-                <div class="clearfix mt-5 mb-2">
+                <form class="clearfix mt-5 mb-2" id="idFormUserFilterByRole">
                     <div class="col-4">
-                        <select class="form-control selectpicker" id="idSelectUserRole"
-                                title="Filter by Role"></select>
+                        <select id="idSelectUserRole" class="form-bs-select"
+                                aria-label="Select Role">
+                            <option value="">Select</option>
+                        </select>
                     </div>
-                </div>
+                </form>
             </div>
             <div class="card-body">
                 <table class="table table-striped table-bordered table-hover" id="idTableUser">
@@ -96,14 +101,12 @@
 <!-- End -->
 
 <!-- Modal for User -->
-<div class="modal fade" data-backdrop="static" id="idModalUser" role="dialog" tabindex="-1">
+<div class="modal fade" data-bs-backdrop="static" id="idModalUser" role="dialog" tabindex="-1">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"></h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
             <div class="modal-body">
 
@@ -111,27 +114,27 @@
                 <div id="idUserShow">
                     <ul class="list-group list-group-flush">
                         <li class="row list-group-item">
-                            <span class="col-sm-3 font-weight-bold">Role:</span>
+                            <span class="col-sm-3 fw-bold">Role:</span>
                             <span class="col-sm-9" id="idRoleShow"></span>
                         </li>
                         <li class="row list-group-item">
-                            <span class="col-sm-3 font-weight-bold">Name:</span>
+                            <span class="col-sm-3 fw-bold">Name:</span>
                             <span class="col-sm-9" id="idNameShow"></span>
                         </li>
                         <li class="row list-group-item">
-                            <span class="col-sm-3 font-weight-bold">Gender:</span>
+                            <span class="col-sm-3 fw-bold">Gender:</span>
                             <span class="col-sm-9" id="idGenderShow"></span>
                         </li>
                         <li class="row list-group-item">
-                            <span class="col-sm-3 font-weight-bold">Date of Birth:</span>
+                            <span class="col-sm-3 fw-bold">Date of Birth:</span>
                             <span class="col-sm-9" id="idDateOfBirthShow"></span>
                         </li>
                         <li class="row list-group-item">
-                            <span class="col-sm-3 font-weight-bold">Mobile Number:</span>
+                            <span class="col-sm-3 fw-bold">Mobile Number:</span>
                             <span class="col-sm-9" id="idMobileNumberShow"></span>
                         </li>
                         <li class="row list-group-item">
-                            <span class="col-sm-3 font-weight-bold">Email Address:</span>
+                            <span class="col-sm-3 fw-bold">Email Address:</span>
                             <span class="col-sm-9" id="idEmailAddressShow"></span>
                         </li>
                     </ul>
@@ -140,27 +143,28 @@
 
                 <!-- User Form Add -->
                 <form id="idFormUserAdd">
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label text-right">User's Role</label>
                         <div class="col-sm-9">
-                            <select class="selectpicker show-tick" data-width="100%" name="userRole"
-                                    title="Select">
+                            <select class="form-select" name="userRole"
+                                    aria-label="Select role">
+                                <option value="">Select</option>
                             </select>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label text-right">First Name</label>
                         <div class="col-sm-9">
                             <input class="form-control" name="firstName" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label text-right">Last Name</label>
                         <div class="col-sm-9">
                             <input class="form-control" name="lastName" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label text-right">Gender</label>
                         <div class="col-sm-9">
                             <div class="form-check form-check-inline">
@@ -180,25 +184,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label text-right">Date of Birth</label>
                         <div class="col-sm-9">
                             <input class="form-control" name="dateOfBirth" type="date">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label text-right">Mobile Number</label>
                         <div class="col-sm-9">
                             <input class="form-control" name="mobileNumber" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label text-right">Email Address</label>
                         <div class="col-sm-9">
                             <input class="form-control" name="emailAddress" type="email">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label text-right">Password</label>
                         <div class="col-sm-9">
                             <input class="form-control" name="password" type="password">
@@ -213,27 +217,26 @@
                 <!-- User Form Update -->
                 <form id="idFormUserUpdate">
                     <input name="id" type="hidden">
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label text-right">User's Role</label>
                         <div class="col-sm-9">
-                            <select class="selectpicker show-tick" data-width="100%" name="userRole"
-                                    title="Select">
+                            <select class="form-select" name="userRole" title="Select role">
                             </select>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label text-right">First Name</label>
                         <div class="col-sm-9">
                             <input class="form-control" name="firstName" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label text-right">Last Name</label>
                         <div class="col-sm-9">
                             <input class="form-control" name="lastName" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label text-right">Gender</label>
                         <div class="col-sm-9">
                             <div class="form-check form-check-inline">
@@ -253,19 +256,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label text-right">Date of Birth</label>
                         <div class="col-sm-9">
                             <input class="form-control" name="dateOfBirth" type="date">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label text-right">Mobile Number</label>
                         <div class="col-sm-9">
                             <input class="form-control" name="mobileNumber" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label text-right">Email Address</label>
                         <div class="col-sm-9">
                             <input class="form-control" name="emailAddress" type="email">
@@ -290,9 +293,7 @@
 
             <div class="modal-header">
                 <h5 class="modal-title">Delete User</h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
 
             <div class="modal-body">
@@ -300,7 +301,7 @@
                 <p>All the data related to this user will be deleted as well permanently.</p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
+                <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Cancel</button>
                 <button class="btn btn-primary" id="idBtnUserDelete" type="button">Delete</button>
             </div>
         </div>
@@ -316,16 +317,14 @@
 
             <div class="modal-header">
                 <h5 class="modal-title">Delete Answers</h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
 
             <div class="modal-body">
                 <p>Are you sure you want to delete answers of this user permanently?</p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
+                <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Cancel</button>
                 <button class="btn btn-primary" id="idBtnAnswerDelete" type="button">Delete</button>
             </div>
         </div>
@@ -340,16 +339,14 @@
 
             <div class="modal-header">
                 <h5 class="modal-title">Response</h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
 
             <div class="modal-body">
                 <p></p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+                <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
             </div>
         </div>
     </div>
@@ -358,7 +355,8 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="/lib/jquery/jquery-3.3.1.min.js"></script>
 <script src="/lib/popper/popper.min.js"></script>
-<script src="/lib/bootstrap/bootstrap.4.2.1.min.js"></script>
+<script src="/lib/choices/choices.min.js"></script>
+<script src="/lib/bootstrap/bootstrap.5.3.3.min.js"></script>
 <script src="/lib/jquery_validation/jquery.validate.1.19.0.min.js"></script>
 <script src="/lib/bootstrap.selectpicker.1.13.2/bootstrap-select.min.js"></script>
 <script src="/lib/DataTables/datatables.min.js"></script>

@@ -33,46 +33,103 @@ $(document).ready(function () {
         });
     });
 
-    let loadUserInSelectPicker = function (pageNumber, pageSize) {
-        let callback = function (data) {
-            SelectPickerUtil.loadDataInSelectPicker(data.data.list, ['firstName', 'lastName', 'emailAddress'], AnswerUI.selectUser);
-            loadUserPagination(data.currentPage, data.totalPage);
-        };
-        UserController.getUserWithLimitedFieldData(AnswerUI.selectUser, pageNumber, pageSize, callback);
-    };
-    loadUserInSelectPicker(0, 100);
+    // let loadUserInSelectPicker = function (pageNumber, pageSize) {
+    //     let callback = function (data) {
+    //         SelectPickerUtil.loadDataInSelectPicker(data.data.list, ['firstName', 'lastName', 'emailAddress'], AnswerUI.selectUser);
+    //         loadUserPagination(data.currentPage, data.totalPage);
+    //     };
+    //     UserController.getUserWithLimitedFieldData(AnswerUI.selectUser, pageNumber, pageSize, callback);
+    // };
+    // loadUserInSelectPicker(0, 100);
+    //
+    // let loadUserPagination = function (currentPageNumber, totalPages) {
+    //     GeneralUtil.empty(AnswerUI.idUserSelectPagination);
+    //     for (let i = 1; i <= totalPages; i++) {
+    //         let pageItem = document.createElement("li");
+    //         pageItem.setAttribute("class", "page-item");
+    //
+    //         let pageLink = document.createElement("a");
+    //         pageLink.setAttribute("class", "page-link");
+    //         pageLink.setAttribute("href", "#");
+    //         pageLink.textContent = i.toString();
+    //
+    //         if (currentPageNumber === i) {
+    //             pageItem.classList.add("disabled");
+    //             pageItem.classList.add("active");
+    //             pageLink.setAttribute("tabindex", "-1");
+    //         }
+    //
+    //         pageItem.appendChild(pageLink);
+    //
+    //         AnswerUI.idUserSelectPagination.appendChild(pageItem);
+    //     }
+    // };
 
-    let loadUserPagination = function (currentPageNumber, totalPages) {
-        GeneralUtil.empty(AnswerUI.idUserSelectPagination);
-        for (let i = 1; i <= totalPages; i++) {
-            let pageItem = document.createElement("li");
-            pageItem.setAttribute("class", "page-item");
+    // $(AnswerUI.idUserSelectPagination).on("click", '.page-item', function (event) {
+    //     if (event.target.text) {
+    //         let clickedPageNumber = event.target.text;
+    //         loadUserInSelectPicker(clickedPageNumber - 1, 100);
+    //     }
+    // });
 
-            let pageLink = document.createElement("a");
-            pageLink.setAttribute("class", "page-link");
-            pageLink.setAttribute("href", "#");
-            pageLink.textContent = i.toString();
 
-            if (currentPageNumber === i) {
-                pageItem.classList.add("disabled");
-                pageItem.classList.add("active");
-                pageLink.setAttribute("tabindex", "-1");
+    // SelectPickerUtil.populateSelectPicker(EndPoints.QUESTIONNAIRE_FIELDS, "title", AnswerUI.selectQuestionnaire);
+
+    SelectPickerUtil.populateSelectPickerNew(EndPoints.QUESTIONNAIRE_FIELDS, "title", AnswerUI.selectQuestionnaire).then(() => {
+        const selectElement = AnswerUI.selectQuestionnaire;
+        if (!selectElement) {
+            console.error("Dropdown not found");
+            return;
+        }
+
+        const choices = new Choices(selectElement, {
+            removeItemButton: true,
+            searchEnabled: false,
+            placeholderValue: "Select a Questionnaire",
+            noChoicesText: "No options available",
+        });
+
+        selectElement.addEventListener("change", () => {
+            const selectedValue = selectElement.value;
+            console.log("Selected value:", selectedValue);
+
+            if (!selectedValue) {
+                AnswerController.listAnswer(AnswerUI.idTableAnswer);
+            } else {
+                null
             }
+        });
 
-            pageItem.appendChild(pageLink);
+        console.log("Dropdown and event listener successfully initialized");
+    }).catch(error => console.error("Error initializing dropdown:", error));
 
-            AnswerUI.idUserSelectPagination.appendChild(pageItem);
+    SelectPickerUtil.populateSelectPickerNew(EndPoints.USER, ['firstName', 'lastName', 'emailAddress'], AnswerUI.selectUser).then(() => {
+        const selectElement = AnswerUI.selectUser;
+        if (!selectElement) {
+            console.error("Dropdown not found");
+            return;
         }
-    };
 
-    $(AnswerUI.idUserSelectPagination).on("click", '.page-item', function (event) {
-        if (event.target.text) {
-            let clickedPageNumber = event.target.text;
-            loadUserInSelectPicker(clickedPageNumber - 1, 100);
-        }
-    });
+        const choices = new Choices(selectElement, {
+            removeItemButton: true,
+            searchEnabled: false,
+            placeholderValue: "Select a User",
+            noChoicesText: "No options available",
+        });
 
-    SelectPickerUtil.populateSelectPicker(EndPoints.QUESTIONNAIRE_FIELDS, "title", AnswerUI.selectQuestionnaire);
+        selectElement.addEventListener("change", () => {
+            const selectedValue = selectElement.value;
+            console.log("Selected value:", selectedValue);
+
+            if (!selectedValue) {
+                AnswerController.listAnswer(AnswerUI.idTableAnswer);
+            } else {
+                null
+            }
+        });
+
+        console.log("Dropdown and event listener successfully initialized");
+    }).catch(error => console.error("Error initializing dropdown:", error));
 
     $(AnswerUI.idFormAnswerFilter).validate({
         rules: {},

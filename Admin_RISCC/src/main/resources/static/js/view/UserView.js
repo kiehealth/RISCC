@@ -10,7 +10,34 @@ import * as UserUI from "../ui/UserUI.js";
 $(document).ready(function () {
     CommonUtil.initialSetup();
 
-    SelectPickerUtil.populateSelectPicker(EndPoints.ROLE, "title", UserUI.idSelectUserRole);
+    // SelectPickerUtil.populateSelectPicker(EndPoints.ROLE, "title", UserUI.idSelectUserRole);
+    SelectPickerUtil.populateSelectPickerNew(EndPoints.ROLE, "title", UserUI.idSelectUserRole).then(() => {
+        const selectElement = UserUI.idSelectUserRole;
+        if (!selectElement) {
+            console.error("Dropdown not found");
+            return;
+        }
+
+        const choices = new Choices(selectElement, {
+            removeItemButton: true,
+            searchEnabled: false,
+            placeholderValue: "Select a ROLE",
+            noChoicesText: "No options available",
+        });
+
+        selectElement.addEventListener("change", () => {
+            const selectedValue = selectElement.value;
+            console.log("Selected value:", selectedValue);
+
+            if (!selectedValue) {
+                UserController.listUser(UserUI.idTableUser);
+            } else {
+                null
+            }
+        });
+
+        console.log("Dropdown and event listener successfully initialized");
+    }).catch(error => console.error("Error initializing dropdown:", error));
 
     if (!CommonUtil.hasAuthority("User (Create)")) {
         $(UserUI.idBtnPopAddUser).hide();
@@ -19,7 +46,34 @@ $(document).ready(function () {
             $(UserUI.idUserShow).hide();
             $(UserUI.idFormUserUpdate).hide();
             $(UserUI.idFormUserAdd).show();
-            SelectPickerUtil.populateSelectPicker(EndPoints.ROLE, "title", UserUI.userRoleAdd);
+            // SelectPickerUtil.populateSelectPicker(EndPoints.ROLE, "title", UserUI.userRoleAdd);
+            SelectPickerUtil.populateSelectPickerNew(EndPoints.ROLE, "title", UserUI.userRoleAdd).then(() => {
+                const selectElement = UserUI.userRoleAdd;
+                if (!selectElement) {
+                    console.error("Dropdown not found");
+                    return;
+                }
+
+                const choices = new Choices(selectElement, {
+                    removeItemButton: true,
+                    searchEnabled: false,
+                    placeholderValue: "Select a User",
+                    noChoicesText: "No options available",
+                });
+
+                selectElement.addEventListener("change", () => {
+                    const selectedValue = selectElement.value;
+                    console.log("Selected value:", selectedValue);
+
+                    if (!selectedValue) {
+                        UserController.listUser(UserUI.idTableUser);
+                    } else {
+                        null
+                    }
+                });
+
+                console.log("Dropdown and event listener successfully initialized");
+            }).catch(error => console.error("Error initializing dropdown:", error));
             UserUI.modalUserTitle.textContent = "Add User";
             $(UserUI.idModalUser).modal("show");
         });
@@ -118,7 +172,35 @@ $(document).ready(function () {
 
     let putValueInEditForm = function (user) {
         UserUI.id.value = user.id;
-        SelectPickerUtil.populateSelectPicker(EndPoints.ROLE, "title", UserUI.userRoleUpdate, user.role.id);
+        // SelectPickerUtil.populateSelectPicker(EndPoints.ROLE, "title", UserUI.userRoleUpdate, user.role.id);
+        SelectPickerUtil.populateSelectPickerNew(EndPoints.ROLE, "title", UserUI.userRoleAdd, user.role.id).then(() => {
+            const selectElement = UserUI.userRoleAdd;
+            if (!selectElement) {
+                console.error("Dropdown not found");
+                return;
+            }
+
+            const choices = new Choices(selectElement, {
+                removeItemButton: true,
+                searchEnabled: false,
+                placeholderValue: "Select a User",
+                noChoicesText: "No options available",
+            });
+
+            selectElement.addEventListener("change", () => {
+                const selectedValue = selectElement.value;
+                console.log("Selected value:", selectedValue);
+
+                if (!selectedValue) {
+                    UserController.listUser(UserUI.idTableUser);
+                } else {
+                    null
+                }
+            });
+
+            console.log("Dropdown and event listener successfully initialized");
+        }).catch(error => console.error("Error initializing dropdown:", error));
+
         UserUI.firstNameUpdate.value = user.firstName;
         UserUI.lastNameUpdate.value = user.lastName;
         UserUI.emailAddressUpdate.value = user.emailAddress;

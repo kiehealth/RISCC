@@ -7,6 +7,7 @@ import * as EndPoints from "../controller/EndPoints.js";
 import * as GroupUI from "../ui/GroupUI.js";
 import * as DateTimeUtil from "../util/DateTimeUtil.js";
 
+
 $(document).ready(function () {
     CommonUtil.initialSetup();
 
@@ -26,8 +27,63 @@ $(document).ready(function () {
             $(GroupUI.idFormGroupUpdate).hide();
             $(GroupUI.idGroupShow).hide();
             $(GroupUI.idFormGroupAdd).show();
-            SelectPickerUtil.populateSelectPicker(EndPoints.USER_FIELDS, ["firstName", "lastName", "emailAddress"], GroupUI.usersAdd);
-            SelectPickerUtil.populateSelectPicker(EndPoints.QUESTIONNAIRE_FIELDS, "title", GroupUI.questionnaireAdd);
+
+            SelectPickerUtil.populateSelectPickerNew(EndPoints.USER_FIELDS,["firstName", "lastName", "emailAddress"], GroupUI.usersAdd).then(() => {
+                const selectElement = GroupUI.usersAdd;
+                if (!selectElement) {
+                    console.error("Dropdown not found");
+                    return;
+                }
+
+                const choices = new Choices(selectElement, {
+                    removeItemButton: true,
+                    searchEnabled: false,
+                    placeholderValue: "Select a User",
+                    noChoicesText: "No User options available",
+                });
+
+                selectElement.addEventListener("change", () => {
+                    const selectedValue = selectElement.value;
+                    console.log("Selected value:", selectedValue);
+
+                    if (!selectedValue) {
+                        GroupController.listGroup(GroupUI.idTableGroup);
+                    } else {
+                        null
+                    }
+                });
+
+                console.log("Dropdown and event listener successfully initialized");
+            }).catch(error => console.error("Error initializing dropdown:", error));
+
+            SelectPickerUtil.populateSelectPickerNew(EndPoints.QUESTIONNAIRE_FIELDS, "title", GroupUI.questionnaireAdd).then(() => {
+                const selectElement = GroupUI.questionnaireAdd;
+                if (!selectElement) {
+                    console.error("Dropdown not found");
+                    return;
+                }
+
+                const choices = new Choices(selectElement, {
+                    removeItemButton: true,
+                    searchEnabled: false,
+                    placeholderValue: "Select a questionnaire",
+                    noChoicesText: "No questionnaire options available",
+                });
+
+                selectElement.addEventListener("change", () => {
+                    const selectedValue = selectElement.value;
+                    console.log("Selected value:", selectedValue);
+
+                    if (!selectedValue) {
+                        GroupController.listGroup(GroupUI.idTableGroup);
+                    } else {
+                        null
+                    }
+                });
+
+                console.log("Dropdown and event listener successfully initialized");
+            }).catch(error => console.error("Error initializing dropdown:", error));
+
             GroupUI.modalGroupTitle.textContent = "Add Group";
             $(GroupUI.idModalGroup).modal("show");
         });
@@ -56,7 +112,34 @@ $(document).ready(function () {
             selectQuestionnaire.setAttribute("required", "true");
             divQuestionnaire.appendChild(selectQuestionnaire);
 
-            SelectPickerUtil.populateSelectPicker(EndPoints.QUESTIONNAIRE_FIELDS, "title", selectQuestionnaire);
+            SelectPickerUtil.populateSelectPickerNew(EndPoints.QUESTIONNAIRE_FIELDS, "title", selectQuestionnaire).then(() => {
+                const selectElement = selectQuestionnaire;
+                if (!selectElement) {
+                    console.error("Dropdown not found");
+                    return;
+                }
+
+                const choices = new Choices(selectElement, {
+                    removeItemButton: true,
+                    searchEnabled: false,
+                    placeholderValue: "Select a ROLE",
+                    noChoicesText: "No options available",
+                });
+
+                selectElement.addEventListener("change", () => {
+                    const selectedValue = selectElement.value;
+                    console.log("Selected value:", selectedValue);
+
+                    if (!selectedValue) {
+                        GroupController.listGroup(GroupUI.idTableGroup);
+                    } else {
+                        null
+                    }
+                });
+
+                console.log("Dropdown and event listener successfully initialized");
+            }).catch(error => console.error("Error initializing dropdown:", error));
+
             div.appendChild(divQuestionnaire);
             //End Questionnaire
 
@@ -317,9 +400,64 @@ $(document).ready(function () {
             Array.from(group.users).forEach(function (value, index, array) {
                 selectedUserIds.push(value.id);
             });
-            SelectPickerUtil.populateSelectPicker(EndPoints.USER_FIELDS, ["firstName", "lastName", "emailAddress"], GroupUI.usersUpdate, selectedUserIds);
+
+            SelectPickerUtil.populateSelectPickerNew(EndPoints.USER_FIELDS, ["firstName", "lastName", "emailAddress"], GroupUI.usersUpdate, selectedUserIds).then(() => {
+                const selectElement = GroupUI.usersUpdate;
+                if (!selectElement) {
+                    console.error("Dropdown not found");
+                    return;
+                }
+
+                const choices = new Choices(selectElement, {
+                    removeItemButton: true,
+                    searchEnabled: false,
+                    placeholderValue: "Select a User",
+                    noChoicesText: "No options available",
+                });
+
+                selectElement.addEventListener("change", () => {
+                    const selectedValue = selectElement.value;
+                    console.log("Selected value:", selectedValue);
+
+                    if (!selectedValue) {
+                        GroupController.listGroup(GroupUI.idTableGroup);
+                    } else {
+                        null
+                    }
+                });
+
+                console.log("Dropdown and event listener successfully initialized");
+            }).catch(error => console.error("Error initializing dropdown:", error));
+
         } else {
-            SelectPickerUtil.populateSelectPicker(EndPoints.USER_FIELDS, ["firstName", "lastName", "emailAddress"], GroupUI.usersUpdate);
+
+            SelectPickerUtil.populateSelectPickerNew(EndPoints.USER_FIELDS, ["firstName", "lastName", "emailAddress"], GroupUI.usersUpdate).then(() => {
+                const selectElement = GroupUI.usersUpdate;
+                if (!selectElement) {
+                    console.error("Dropdown not found");
+                    return;
+                }
+
+                const choices = new Choices(selectElement, {
+                    removeItemButton: true,
+                    searchEnabled: false,
+                    placeholderValue: "Select a User",
+                    noChoicesText: "No options available",
+                });
+
+                selectElement.addEventListener("change", () => {
+                    const selectedValue = selectElement.value;
+                    console.log("Selected value:", selectedValue);
+
+                    if (!selectedValue) {
+                        GroupController.listGroup(GroupUI.idTableGroup);
+                    } else {
+                        null
+                    }
+                });
+
+                console.log("Dropdown and event listener successfully initialized");
+            }).catch(error => console.error("Error initializing dropdown:", error));
         }
 
         if (group.groupQuestionnaires && group.groupQuestionnaires.length > 0) {
@@ -351,7 +489,35 @@ $(document).ready(function () {
                 selectQuestionnaire.setAttribute("title", "Select");
                 divQuestionnaire.appendChild(selectQuestionnaire);
 
-                SelectPickerUtil.populateSelectPicker(EndPoints.QUESTIONNAIRE_FIELDS, "title", selectQuestionnaire, item.questionnaire.id);
+
+                SelectPickerUtil.populateSelectPickerNew(EndPoints.QUESTIONNAIRE_FIELDS, "title", selectQuestionnaire, item.questionnaire.id).then(() => {
+                    const selectElement = selectQuestionnaire;
+                    if (!selectElement) {
+                        console.error("Dropdown not found");
+                        return;
+                    }
+
+                    const choices = new Choices(selectElement, {
+                        removeItemButton: true,
+                        searchEnabled: false,
+                        placeholderValue: "Select a User",
+                        noChoicesText: "No options available",
+                    });
+
+                    selectElement.addEventListener("change", () => {
+                        const selectedValue = selectElement.value;
+                        console.log("Selected value:", selectedValue);
+
+                        if (!selectedValue) {
+                            GroupController.listGroup(GroupUI.idTableGroup);
+                        } else {
+                            null
+                        }
+                    });
+
+                    console.log("Dropdown and event listener successfully initialized");
+                }).catch(error => console.error("Error initializing dropdown:", error));
+
                 div.appendChild(divQuestionnaire);
                 //End Questionnaire
 
@@ -522,7 +688,35 @@ $(document).ready(function () {
         selectQuestionnaire.setAttribute("required", "true");
         divQuestionnaire.appendChild(selectQuestionnaire);
 
-        SelectPickerUtil.populateSelectPicker(EndPoints.QUESTIONNAIRE_FIELDS, "title", selectQuestionnaire);
+
+        SelectPickerUtil.populateSelectPickerNew(EndPoints.QUESTIONNAIRE_FIELDS, "title", selectQuestionnaire).then(() => {
+            const selectElement = selectQuestionnaire;
+            if (!selectElement) {
+                console.error("Dropdown not found");
+                return;
+            }
+
+            const choices = new Choices(selectElement, {
+                removeItemButton: true,
+                searchEnabled: false,
+                placeholderValue: "Select a User",
+                noChoicesText: "No options available",
+            });
+
+            selectElement.addEventListener("change", () => {
+                const selectedValue = selectElement.value;
+                console.log("Selected value:", selectedValue);
+
+                if (!selectedValue) {
+                    GroupController.listGroup(GroupUI.idTableGroup);
+                } else {
+                    null
+                }
+            });
+
+            console.log("Dropdown and event listener successfully initialized");
+        }).catch(error => console.error("Error initializing dropdown:", error));
+
         div.appendChild(divQuestionnaire);
         //End Questionnaire
 

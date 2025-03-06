@@ -7,6 +7,7 @@ import * as EndPoints from "../controller/EndPoints.js";
 import {RoleModel} from "../model/RoleModel.js";
 import * as RoleUI from "../ui/RoleUI.js";
 
+
 $(document).ready(function () {
     CommonUtil.initialSetup();
 
@@ -16,7 +17,36 @@ $(document).ready(function () {
         RoleUI.idBtnPopAddRole.addEventListener("click", function (event) {
             $(RoleUI.idFormRoleUpdate).hide();
             $(RoleUI.idFormRoleAdd).show();
-            SelectPickerUtil.populateSelectPicker(EndPoints.AUTHORITY, "title", RoleUI.authoritiesAdd);
+            // SelectPickerUtil.populateSelectPicker(EndPoints.AUTHORITY, "title", RoleUI.authoritiesAdd);
+
+            SelectPickerUtil.populateSelectPickerNew(EndPoints.AUTHORITY,"title", RoleUI.authoritiesAdd).then(() => {
+                const selectElement = RoleUI.authoritiesAdd;
+                if (!selectElement) {
+                    console.error("Dropdown not found");
+                    return;
+                }
+
+                const choices = new Choices(selectElement, {
+                    removeItemButton: true,
+                    searchEnabled: false,
+                    placeholderValue: "Select a AUTHORITY",
+                    noChoicesText: "No AUTHORITY options available",
+                });
+
+                selectElement.addEventListener("change", () => {
+                    const selectedValue = selectElement.value;
+                    console.log("Selected value:", selectedValue);
+
+                    if (!selectedValue) {
+                        RoleController.listRole(RoleUI.idTableRole);
+                    } else {
+                        null
+                    }
+                });
+
+                console.log("Dropdown and event listener successfully initialized");
+            }).catch(error => console.error("Error initializing dropdown:", error));
+
             RoleUI.modalRoleTitle.textContent = "Add Role";
             $(RoleUI.idModalRole).modal("show");
         });
@@ -61,7 +91,35 @@ $(document).ready(function () {
         Array.from(role.authorities).forEach(function (value, index, array) {
             selectedAuthorityIds.push(value.id);
         });
-        SelectPickerUtil.populateSelectPicker(EndPoints.AUTHORITY, "title", RoleUI.authoritiesUpdate, selectedAuthorityIds);
+        // SelectPickerUtil.populateSelectPicker(EndPoints.AUTHORITY, "title", RoleUI.authoritiesUpdate, selectedAuthorityIds);
+
+        SelectPickerUtil.populateSelectPickerNew(EndPoints.AUTHORITY,"title", RoleUI.authoritiesUpdate, selectedAuthorityIds).then(() => {
+            const selectElement = RoleUI.authoritiesUpdate;
+            if (!selectElement) {
+                console.error("Dropdown not found");
+                return;
+            }
+
+            const choices = new Choices(selectElement, {
+                removeItemButton: true,
+                searchEnabled: false,
+                placeholderValue: "Select a AUTHORITY",
+                noChoicesText: "No AUTHORITY options available",
+            });
+
+            selectElement.addEventListener("change", () => {
+                const selectedValue = selectElement.value;
+                console.log("Selected value:", selectedValue);
+
+                if (!selectedValue) {
+                    RoleController.listRole(RoleUI.idTableRole);
+                } else {
+                    null
+                }
+            });
+
+            console.log("Dropdown and event listener successfully initialized");
+        }).catch(error => console.error("Error initializing dropdown:", error));
     };
 
     $(RoleUI.idFormRoleUpdate).validate({

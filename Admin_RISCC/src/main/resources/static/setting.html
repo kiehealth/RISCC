@@ -6,8 +6,9 @@
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
     <!-- Bootstrap CSS, Fontawesome CSS -->
-    <link href="/lib/bootstrap/bootstrap.5.3.1.min.css" rel="stylesheet">
-    <link href="/lib/fontawesome/css/all.5.6.3.min.css" rel="stylesheet">
+    <link href="/lib/bootstrap/bootstrap.5.3.3.min.css" rel="stylesheet">
+    <link href="/lib/fontawesome/css/all.6.7.1.min.css" rel="stylesheet">
+    <link href="lib/choices/choices.min.css" rel="stylesheet">
     <link href="/lib/bootstrap.selectpicker.1.13.2/bootstrap-select.min.css" rel="stylesheet">
     <link href="/lib/DataTables/datatables.min.css" rel="stylesheet">
     <!-- Scrollbar Custom CSS -->
@@ -39,15 +40,20 @@
 
                 <div class="d-flex align-items-center ml-auto">
                     <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                            class="btn btn-dark d-inline-block d-lg-none ml-auto" data-target="#navbarSupportedContent"
-                            data-toggle="collapse" type="button">
+                            class="btn btn-dark d-inline-block d-lg-none ml-auto"
+                            data-bs-target="#navbarSupportedContent"
+                            data-bs-toggle="collapse" type="button">
                         <i class="fas fa-align-justify"></i>
                     </button>
+
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="#" id="idButtonLogout"><span class="color-red"><i
-                                        class="fas fa-sign-out-alt"></i> Logout</span></a>
+                                <a class="nav-link" href="#" id="idButtonLogout">
+                                    <span class="color-red">
+                                        <i class="fas fa-sign-out-alt"></i> Logout
+                                    </span>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -57,9 +63,10 @@
         </nav>
 
         <div class="card">
-            <div class="card-header clearfix">
-                <h5 class="float-left">Setting</h5>
+            <div class="card-header ">
+                <h5 class="float-start">Setting</h5>
             </div>
+
             <div class="card-body">
                 <div class="border p-3 mb-3">
                     <h5>App Version</h5>
@@ -173,32 +180,30 @@
 <!-- End -->
 
 <!-- Modal for App Version -->
-<div class="modal fade" data-backdrop="static" id="idModalAppVersion" role="dialog" tabindex="-1">
+<div class="modal fade" data-bs-backdrop="static" id="idModalAppVersion" role="dialog" tabindex="-1">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"></h5>
-                <button aria-label="Close" class="close" data-bs-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
             <div class="modal-body">
                 <!-- App Version Form Update -->
                 <form id="idFormAppVersionUpdate">
                     <input name="id" type="hidden">
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">Family *</label>
                         <div class="col-sm-10">
                             <input class="form-control" name="family" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">Version *</label>
                         <div class="col-sm-10">
                             <input class="form-control" name="version" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label">Force Update</label>
                         <div class="col-sm-9">
                             <div class="form-check form-check-inline">
@@ -213,7 +218,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">Url</label>
                         <div class="col-sm-10">
                             <input class="form-control" name="url" type="text">
@@ -231,26 +236,24 @@
 <!-- End -->
 
 <!-- Modal for Setting -->
-<div class="modal fade" data-backdrop="static" id="idModalSetting" role="dialog" tabindex="-1">
+<div class="modal fade" data-bs-backdrop="static" id="idModalSetting" role="dialog" tabindex="-1">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"></h5>
-                <button aria-label="Close" class="close" data-bs-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
             <div class="modal-body">
                 <!-- Setting Form Update -->
                 <form id="idFormSettingUpdate">
                     <input name="id" type="hidden">
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">Title</label>
                         <div class="col-sm-10">
                             <input class="form-control-plaintext" name="keyTitle" readonly type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">Value</label>
                         <div class="col-sm-10">
                             <input class="form-control" name="keyValue" type="text">
@@ -268,32 +271,30 @@
 <!-- End -->
 
 <!-- Modal for About Us -->
-<div class="modal fade" data-backdrop="static" id="idModalAboutUs" role="dialog" tabindex="-1">
+<div class="modal fade" data-bs-backdrop="static" id="idModalAboutUs" role="dialog" tabindex="-1">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"></h5>
-                <button aria-label="Close" class="close" data-bs-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
             <div class="modal-body">
                 <!-- About Us Form Update -->
                 <form id="idFormAboutUsUpdate">
                     <input name="id" type="hidden">
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">Name</label>
                         <div class="col-sm-10">
                             <input class="form-control" name="name" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">Phone</label>
                         <div class="col-sm-10">
                             <input class="form-control" name="phone" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-10">
                             <input class="form-control" name="email" type="email">
@@ -311,50 +312,48 @@
 <!-- End -->
 
 <!-- Modal for Welcome -->
-<div class="modal fade" data-backdrop="static" id="idModalWelcome" role="dialog" tabindex="-1">
+<div class="modal fade" data-bs-backdrop="static" id="idModalWelcome" role="dialog" tabindex="-1">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"></h5>
-                <button aria-label="Close" class="close" data-bs-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
             <div class="modal-body">
                 <!-- Welcome Form Update -->
                 <form id="idFormWelcomeUpdate">
                     <input name="id" type="hidden">
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">Welcome Text</label>
                         <div class="col-sm-10">
                             <textarea class="form-control" name="welcomeText" rows="5"></textarea>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">Welcome Text Swedish</label>
                         <div class="col-sm-10">
                             <textarea class="form-control" name="welcomeTextSwedish" rows="5"></textarea>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">Welcome Text Spanish</label>
                         <div class="col-sm-10">
                             <textarea class="form-control" name="welcomeTextSpanish" rows="5"></textarea>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">Thank You Text</label>
                         <div class="col-sm-10">
                             <input class="form-control" name="thankYouText" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">Thank You Text Swedish</label>
                         <div class="col-sm-10">
                             <input class="form-control" name="thankYouTextSwedish" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">Thank You Text Spanish</label>
                         <div class="col-sm-10">
                             <input class="form-control" name="thankYouTextSpanish" type="text">
@@ -372,31 +371,30 @@
 <!-- End -->
 
 <!-- Modal for Resource File -->
-<div class="modal fade" data-backdrop="static" id="idModalResourceFile" role="dialog" tabindex="-1">
+<div class="modal fade" data-bs-backdrop="static" id="idModalResourceFile" role="dialog" tabindex="-1">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"></h5>
-                <button aria-label="Close" class="close" data-bs-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button">
                 </button>
             </div>
             <div class="modal-body">
                 <!-- Resource File Form Add -->
                 <form enctype="multipart/form-data" id="idFormResourceFileAdd">
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">Title *</label>
                         <div class="col-sm-10">
                             <input class="form-control" name="title" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">Description</label>
                         <div class="col-sm-10">
                             <textarea class="form-control" name="description"></textarea>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">File</label>
                         <div class="col-sm-10">
                             <input class="form-control" name="resourceFile" type="file">
@@ -411,19 +409,19 @@
                 <!-- Resource File Form Update -->
                 <form id="idFormResourceFileUpdate">
                     <input name="id" type="hidden">
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">Title *</label>
                         <div class="col-sm-10">
                             <input class="form-control" name="title" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">Description</label>
                         <div class="col-sm-10">
                             <textarea class="form-control" name="description"></textarea>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">File</label>
                         <div class="col-sm-10">
                             <input class="form-control" name="resourceFile" type="file">
@@ -447,9 +445,7 @@
 
             <div class="modal-header">
                 <h5 class="modal-title">Delete Resource File</h5>
-                <button aria-label="Close" class="close" data-bs-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
 
             <div class="modal-body">
@@ -465,47 +461,45 @@
 <!-- End -->
 
 <!-- modal for RISCC range and message -->
-<div class="modal fade" data-backdrop="static" id="idModalRisccValueRange" role="dialog" tabindex="-1">
+<div class="modal fade" data-bs-backdrop="static" id="idModalRisccValueRange" role="dialog" tabindex="-1">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"></h5>
-                <button aria-label="Close" class="close" data-bs-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
             <div class="modal-body">
                 <!-- Riscc Range Form Add -->
                 <form id="idFormRisccRangeAdd">
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">
                             Questionnaire *
                         </label>
                         <div class="col-sm-10">
-                            <select class="selectpicker show-tick" data-width="100%" name="questionnaire"
+                            <select class="form-control show-tick" data-width="100%" name="questionnaire"
                                     title="Select">
                             </select>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">From Value (>=) *</label>
                         <div class="col-sm-10">
                             <input class="form-control" name="fromValue" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">To Value (<) *</label>
                         <div class="col-sm-10">
                             <input class="form-control" name="toValue" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">Message *</label>
                         <div class="col-sm-10">
                             <textarea class="form-control" name="message"></textarea>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">More Info</label>
                         <div class="col-sm-10">
                             <textarea class="form-control" name="moreInfo"></textarea>
@@ -525,30 +519,31 @@
                             Questionnaire *
                         </label>
                         <div class="col-sm-10">
-                            <select class="selectpicker show-tick" data-width="100%" name="questionnaire"
-                                    title="Select">
+                            <select class="form-bs-select" data-width="100%" name="questionnaire"
+                                    aria-label="Select">
+                                <option value="">Select</option>
                             </select>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">From Value (>=) *</label>
                         <div class="col-sm-10">
                             <input class="form-control" name="fromValue" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">To Value (<) *</label>
                         <div class="col-sm-10">
                             <input class="form-control" name="toValue" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">Message *</label>
                         <div class="col-sm-10">
                             <textarea class="form-control" name="message"></textarea>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class=" row mb-3">
                         <label class="col-sm-2 col-form-label">More Info</label>
                         <div class="col-sm-10">
                             <textarea class="form-control" name="moreInfo"></textarea>
@@ -572,9 +567,7 @@
 
             <div class="modal-header">
                 <h5 class="modal-title">Delete Riscc Range</h5>
-                <button aria-label="Close" class="close" data-bs-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
 
             <div class="modal-body">
@@ -597,9 +590,7 @@
 
             <div class="modal-header">
                 <h5 class="modal-title">Response</h5>
-                <button aria-label="Close" class="close" data-bs-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
 
             <div class="modal-body">
@@ -615,7 +606,8 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="/lib/jquery/jquery-3.3.1.min.js"></script>
 <script src="/lib/popper/popper.min.js"></script>
-<script src="/lib/bootstrap/bootstrap.5.3.1.min.js"></script>
+<script src="/lib/choices/choices.min.js"></script>
+<script src="/lib/bootstrap/bootstrap.5.3.3.min.js"></script>
 <script src="/lib/jquery_validation/jquery.validate.1.19.0.min.js"></script>
 <script src="/lib/bootstrap.selectpicker.1.13.2/bootstrap-select.min.js"></script>
 <script src="/lib/DataTables/datatables.min.js"></script>

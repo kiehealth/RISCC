@@ -6,8 +6,9 @@
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
     <!-- Bootstrap CSS, Fontawesome CSS -->
-    <link href="/lib/bootstrap/bootstrap.4.2.1.min.css" rel="stylesheet">
-    <link href="/lib/fontawesome/css/all.5.6.3.min.css" rel="stylesheet">
+    <link href="/lib/bootstrap/bootstrap.5.3.3.min.css" rel="stylesheet">
+    <link href="/lib/fontawesome/css/all.6.7.1.min.css" rel="stylesheet">
+    <link href="lib/choices/choices.min.css" rel="stylesheet">
     <link href="/lib/bootstrap.selectpicker.1.13.2/bootstrap-select.min.css" rel="stylesheet">
     <link href="/lib/DataTables/datatables.min.css" rel="stylesheet">
     <!-- Scrollbar Custom CSS -->
@@ -31,6 +32,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
+
                 <div class="d-flex align-content-center">
                     <button class="btn btn-lg red" id="sidebarCollapse" type="button">
                         <i class="fas fa-bars"></i>
@@ -40,15 +42,21 @@
 
                 <div class="d-flex align-items-center ml-auto">
                     <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                            class="btn btn-dark d-inline-block d-lg-none ml-auto" data-target="#navbarSupportedContent"
-                            data-toggle="collapse" type="button">
+                            class="btn btn-dark d-inline-block d-lg-none ml-auto"
+                            data-bs-target="#navbarSupportedContent"
+                            data-bs-toggle="collapse" type="button">
                         <i class="fas fa-align-justify"></i>
                     </button>
+
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="#" id="idButtonLogout"><span class="color-red"><i
-                                        class="fas fa-sign-out-alt"></i> Logout</span></a>
+                                <a class="nav-link" href="#" id="idButtonLogout">
+                                    <span class="color-red">
+                                        <i class="fas fa-sign-out-alt">
+                                        </i> Logout
+                                    </span>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -57,11 +65,11 @@
         </nav>
 
         <div class="card">
-            <div class="card-header clearfix">
-                <h5 class="float-left">Notification</h5>
-                <button class="btn btn-link float-right" id="idBtnPopAddNotification"><i class="fas fa-plus-circle"></i>
-                    Notification
-                </button>
+            <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 >Notification</h5>
+                    <button class="btn float-end" id="idBtnPopAddNotification">
+                        <i class="fas fa-plus-circle"></i>Notification
+                    </button>
             </div>
             <div class="card-body">
                 <table class="table table-striped table-bordered table-hover" id="idTableNotification">
@@ -87,36 +95,35 @@
 <!-- End -->
 
 <!-- Modal for Notification -->
-<div class="modal fade" data-backdrop="static" id="idModalNotification" role="dialog" tabindex="-1">
-    <div class="modal-dialog modal-lg" role="document">
+<div class="modal fade" data-bs-backdrop="static" id="idModalNotification" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"></h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
             <div class="modal-body">
                 <!-- Notification Form Add -->
                 <form id="idFormNotificationAdd">
-                    <div class="form-group row">
+                    <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Title</label>
                         <div class="col-sm-9">
                             <input class="form-control" name="title" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Description</label>
                         <div class="col-sm-9">
                             <textarea class="form-control" name="description"></textarea>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Notification Type</label>
                         <div class="col-sm-9">
-                            <select class="selectpicker show-tick" data-width="100%"
+                            <select class=" form-control" data-width="100%"
                                     name="notificationType"
-                                    title="Select">
+                                    aria-label="Select">
+                                <option value="">SELECT</option>
                                 <option value="BROADCAST">Broadcast</option>
                                 <option value="ROLE">Role</option>
                                 <option value="GROUP">Group</option>
@@ -124,37 +131,39 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group row" id="roleContainer">
+                    <div class="mb-3 row" id="roleContainer">
                         <label class="col-sm-3 col-form-label">Role</label>
                         <div class="col-sm-9">
-                            <select class="selectpicker show-tick" data-width="100%" multiple
+                            <select class=" form-control" data-width="100%" multiple
                                     name="roles"
-                                    title="Select">
+                                    ARIA-LABEL="Select">
                             </select>
                         </div>
                     </div>
-                    <div class="form-group row" id="groupContainer">
+                    <div class="mb-3 row" id="groupContainer">
                         <label class="col-sm-3 col-form-label">Group</label>
                         <div class="col-sm-9">
-                            <select class="selectpicker show-tick" data-width="100%" multiple
+                            <select class=" form-control" data-width="100%" multiple
                                     name="groups"
-                                    title="Select">
+                                    aria-label="Select">
                             </select>
                         </div>
                     </div>
-                    <div class="form-group row" id="userContainer">
+                    <div class="mb-3 row" id="userContainer">
                         <label class="col-sm-3 col-form-label">User</label>
                         <div class="col-sm-9">
                             <div class="mt-auto">
                                 <nav>
                                     <ul class="pagination pagination-sm" id="idUserSelectPagination"></ul>
                                 </nav>
-                                <select class="selectpicker show-tick" data-actions-box="true"
+                                <select class=" form-control" data-actions-box="true"
                                         data-live-search="true"
                                         data-width="100%"
                                         multiple
                                         name="users"
-                                        title="Select User"></select>
+                                        aria-label="Select User">
+
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -178,16 +187,14 @@
 
             <div class="modal-header">
                 <h5 class="modal-title">Delete Notification</h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
 
             <div class="modal-body">
                 <p>Are you sure you want to delete this Notification? You won't be able to recover it.</p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
+                <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Cancel</button>
                 <button class="btn btn-primary" id="idBtnNotificationDelete" type="button">Delete</button>
             </div>
         </div>
@@ -202,16 +209,14 @@
 
             <div class="modal-header">
                 <h5 class="modal-title">Response</h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
 
             <div class="modal-body">
                 <p></p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+                <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
             </div>
         </div>
     </div>
@@ -220,7 +225,8 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="/lib/jquery/jquery-3.3.1.min.js"></script>
 <script src="/lib/popper/popper.min.js"></script>
-<script src="/lib/bootstrap/bootstrap.4.2.1.min.js"></script>
+<script src="/lib/bootstrap/bootstrap.5.3.3.min.js"></script>
+<script src="/lib/choices/choices.min.js"></script>
 <script src="/lib/jquery_validation/jquery.validate.1.19.0.min.js"></script>
 <script src="/lib/bootstrap.selectpicker.1.13.2/bootstrap-select.min.js"></script>
 <script src="/lib/DataTables/datatables.min.js"></script>

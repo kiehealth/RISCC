@@ -6,8 +6,9 @@
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
     <!-- Bootstrap CSS, Fontawesome CSS -->
-    <link href="/lib/bootstrap/bootstrap.4.2.1.min.css" rel="stylesheet">
-    <link href="/lib/fontawesome/css/all.5.6.3.min.css" rel="stylesheet">
+    <link href="/lib/bootstrap/bootstrap.5.3.3.min.css" rel="stylesheet">
+    <link href="/lib/fontawesome/css/all.6.7.1.min.css" rel="stylesheet">
+    <link href="lib/choices/choices.min.css" rel="stylesheet">
     <link href="/lib/bootstrap.selectpicker.1.13.2/bootstrap-select.min.css" rel="stylesheet">
     <link href="/lib/DataTables/datatables.min.css" rel="stylesheet">
     <!-- Scrollbar Custom CSS -->
@@ -31,7 +32,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <div class="d-flex align-content-center">
-                    <button class="btn btn-lg red" id="sidebarCollapse" type="button">
+                    <button class="btn btn-lg navMenuHideShowButton" id="sidebarCollapse" type="button">
                         <i class="fas fa-bars"></i>
                         <span></span>
                     </button>
@@ -39,8 +40,9 @@
 
                 <div class="d-flex align-items-center ml-auto">
                     <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                            class="btn btn-dark d-inline-block d-lg-none ml-auto" data-target="#navbarSupportedContent"
-                            data-toggle="collapse" type="button">
+                            class="btn btn-dark d-inline-block d-lg-none ml-auto"
+                            data-bs-target="#navbarSupportedContent"
+                            data-bs-toggle="collapse" type="button">
                         <i class="fas fa-align-justify"></i>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -57,9 +59,11 @@
         </nav>
 
         <div class="card">
-            <div class="card-header clearfix">
-                <h5 class="float-left">Role</h5>
-                <button class="btn btn-link float-right" id="idBtnPopAddRole"><i class="fas fa-plus-circle"></i> Role
+            <div class="card-header">
+                <h5 class="float-start">Role</h5>
+                <button class="btn float-end" id="idBtnPopAddRole">
+                    <i class="fas fa-plus-circle"></i>
+                    Role
                 </button>
             </div>
             <div class="card-body">
@@ -83,14 +87,12 @@
 <!-- End -->
 
 <!-- Modal for Role -->
-<div class="modal fade" data-backdrop="static" id="idModalRole" role="dialog" tabindex="-1">
-    <div class="modal-dialog modal-lg" role="document">
+<div class="modal fade" data-bs-backdrop="static" id="idModalRole"  tabindex="-1">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"></h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
             <div class="modal-body">
                 <!-- Role Form Add -->
@@ -104,12 +106,17 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Authorities</label>
                         <div class="col-sm-10">
-                            <select class="selectpicker show-tick" data-actions-box="true" data-live-search="true"
-                                    data-width="100%"
-                                    multiple
-                                    name="authorities"
-                                    title="Select">
+                            <select class="form-select" name="authorities"
+                                    aria-label="Select authorities" multiple>
+                                <option value="">Select</option>
                             </select>
+
+<!--                            <select class="selectpicker show-tick" data-actions-box="true" data-live-search="true"-->
+<!--                                    data-width="100%"-->
+<!--                                    multiple-->
+<!--                                    name="authorities"-->
+<!--                                    title="Select">-->
+<!--                            </select>-->
                         </div>
                     </div>
                     <div class="offset-2">
@@ -130,12 +137,16 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Authorities</label>
                         <div class="col-sm-10">
-                            <select class="selectpicker show-tick" data-actions-box="true" data-live-search="true"
-                                    data-width="100%"
-                                    multiple
-                                    name="authorities"
-                                    title="Select">
+                            <select class="form-select" name="authorities"
+                                    aria-label="Select authorities">
+                                <option value="">Select</option>
                             </select>
+<!--                            <select class="selectpicker show-tick" data-actions-box="true" data-live-search="true"-->
+<!--                                    data-width="100%"-->
+<!--                                    multiple-->
+<!--                                    name="authorities"-->
+<!--                                    title="Select">-->
+<!--                            </select>-->
                         </div>
                     </div>
                     <div class="offset-2">
@@ -157,16 +168,14 @@
 
             <div class="modal-header">
                 <h5 class="modal-title">Response</h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
 
             <div class="modal-body">
                 <p></p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+                <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
             </div>
         </div>
     </div>
@@ -175,7 +184,8 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="/lib/jquery/jquery-3.3.1.min.js"></script>
 <script src="/lib/popper/popper.min.js"></script>
-<script src="/lib/bootstrap/bootstrap.4.2.1.min.js"></script>
+<script src="/lib/choices/choices.min.js"></script>
+<script src="/lib/bootstrap/bootstrap.5.3.3.min.js"></script>
 <script src="/lib/jquery_validation/jquery.validate.1.19.0.min.js"></script>
 <script src="/lib/bootstrap.selectpicker.1.13.2/bootstrap-select.min.js"></script>
 <script src="/lib/DataTables/datatables.min.js"></script>

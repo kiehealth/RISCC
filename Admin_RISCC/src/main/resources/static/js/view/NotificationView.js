@@ -25,13 +25,69 @@ $(document).ready(function () {
 
         NotificationUI.notificationType.addEventListener("change", function (event) {
             if ($(NotificationUI.notificationType).val() === "ROLE") {
-                SelectPickerUtil.populateSelectPicker(EndPoints.ROLE, "title", NotificationUI.roles);
+                SelectPickerUtil.populateSelectPickerNew(EndPoints.ROLE, "title", NotificationUI.roles)
+                    .then(() => {
+                        const selectElement = NotificationUI.roles;
+                        if(!selectElement){
+                            console.error("Dropdown not found");
+                            return;
+                        }
+
+                        const choices = new Choices(selectElement, {
+                            removeItemButton: true,
+                            searchEnabled: false,
+                            placeholderValue: "Select a ROLE",
+                            noChoicesText: "No Role options available",
+                        })
+
+                        selectElement.addEventListener("change", () => {
+                            const selectedValue = selectElement.value;
+                            console.log("Selected value:", selectedValue);
+
+                            if (!selectedValue){
+                                NotificationController.listNotification(NotificationUI.idTableNotification);
+                            } else {
+                                null
+                            }
+                        });
+
+                        console.log("Dropdown and event listener successfully initialized");
+                    }).catch(error => console.error("Error initializing dropdown:", error));
+
                 NotificationUI.userContainer.hidden = true;
                 NotificationUI.groupContainer.hidden = true;
                 NotificationUI.roleContainer.hidden = false;
 
             } else if ($(NotificationUI.notificationType).val() === "GROUP") {
-                SelectPickerUtil.populateSelectPicker(EndPoints.GROUP, "title", NotificationUI.groups);
+                SelectPickerUtil.populateSelectPickerNew(EndPoints.GROUP, "title", NotificationUI.groups)
+                    .then(() => {
+                        const selectElement = NotificationUI.groups;
+
+                        if (!selectElement) {
+                            console.error("Dropdown not found");
+                            return;
+                        }
+
+                        const choices = new Choices(selectElement, {
+                            removeItemButton: true,
+                            searchEnabled: false,
+                            placeholderValue: "Select a Group",
+                            noChoicesText: "No Group options available",
+                        });
+
+                        selectElement.addEventListener("change", () => {
+                            const selectedValue = selectElement.value;
+                            console.log("Selected value:", selectedValue);
+
+                            if(!selectedValue){
+                                NotificationController.listNotification(NotificationUI.idTableNotification);
+                            } else {
+                                null
+                            }
+                        });
+                        console.log("Dropdown and event event listener successfully initialized");
+                    }).catch(error => console.error("Error initializing dropdown:", error));
+
                 NotificationUI.userContainer.hidden = true;
                 NotificationUI.roleContainer.hidden = true;
                 NotificationUI.groupContainer.hidden = false;

@@ -76,7 +76,7 @@ export let addNavMenu = function () {
 
         //Utility Sub Menu dropdown
         '            <li id="utilitySubMenuContainer">' +
-        '                <a aria-expanded="false" class="dropdown-toggle" data-toggle="collapse" href="#utilitySubMenu">' +
+        '                <a aria-expanded="false" class="dropdown-toggle" data-toggle="collapse"  data-bs-toggle="collapse" href="#utilitySubMenu">' +
         '                    <div class="row">' +
         '                        <div class="col-2"><i class=\'fas fa-tools\'></i></div>' +
         '                        <div class="col-10">Utility</div>' +
@@ -128,7 +128,7 @@ export let addNavMenu = function () {
 
         //App Analytics sub menu dropdown
         '            <li id="appAnalyticsSubMenuContainer">' +
-        '                <a aria-expanded="false" class="dropdown-toggle" data-toggle="collapse" href="#appAnalyticsSubMenu">' +
+        '                <a aria-expanded="false" class="dropdown-toggle" data-toggle="collapse"  data-bs-toggle="collapse" href="#appAnalyticsSubMenu">' +
         '                    <div class="row">' +
         '                        <div class="col-2"><i class=\'fas fa-chart-bar\'></i></div>' +
         '                        <div class="col-10">App Analytics</div>' +

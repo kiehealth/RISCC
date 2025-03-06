@@ -2,6 +2,67 @@
 import * as LoaderUtil from "./LoaderUtil.js";
 import * as AlertMessageUtil from "./AlertMessageUtil.js";
 
+
+export async function populateSelectPickerNew(api, titleKey, elem, selectedItem, extraOption) {
+    try {
+        if (elem.choicesInstance) {
+            elem.choicesInstance.destroy();
+            elem.choicesInstance = null;
+        }
+
+        elem.innerHTML = '';
+        LoaderUtil.showLoader(elem);
+
+        const response = await fetch(api, {
+            method: 'GET',
+            headers: { "Authorization": localStorage.getItem("token") }
+        });
+        const json = await response.json();
+
+        if (!json.status) {
+            AlertMessageUtil.alertMessage(json);
+            return;
+        }
+
+        const options = [];
+        if (extraOption) {
+            options.push(new Option(extraOption, ''));
+        }
+
+        const dataList = json.data.list;
+        dataList.forEach(item => {
+            const content = Array.isArray(titleKey)
+                ? titleKey.map(key => item[key] || '').join(' ').trim()
+                : item[titleKey];
+            const option = new Option(content, item.id);
+
+            if (selectedItem) {
+                if (Array.isArray(selectedItem) && selectedItem.includes(item.id)) {
+                    option.selected = true;
+                } else if (selectedItem === item.id) {
+                    option.selected = true;
+                }
+            }
+            options.push(option);
+        });
+
+        elem.options.length = 0;
+        options.forEach(opt => elem.add(opt));
+
+        if (elem.classList.contains('form-select')) {
+            elem.dispatchEvent(new Event('change'));
+        }
+    } catch (error) {
+        console.error("Error: ", error);
+        AlertMessageUtil.alertMessage(error.message || 'Error occurred.');
+    } finally {
+        LoaderUtil.hideLoader(elem);
+
+        selectedItem = null;
+    }
+}
+
+
 export let populateSelectPicker = function (api, titleKey, elem, selectedItem, extraOption) {
     empty(elem);
 

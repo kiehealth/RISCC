@@ -59,18 +59,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .cors().and()
-                // we don't need CSRF because our token is invulnerable
                 .csrf().disable()
 
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
 
-                // don't create session
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 
                 .authorizeRequests()
 
-                // allow anonymous resource requests
                 .antMatchers(HttpMethod.GET, "/resources/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/public/resources_file/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/").permitAll()
                 .antMatchers(HttpMethod.GET, "/dashboard.html").permitAll()
                 .antMatchers(HttpMethod.GET, "/user.html", "/user_profile.html").permitAll()

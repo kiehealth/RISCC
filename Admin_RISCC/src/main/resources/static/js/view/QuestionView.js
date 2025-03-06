@@ -9,7 +9,34 @@ import * as QuestionUI from "../ui/QuestionUI.js";
 $(document).ready(function () {
     CommonUtil.initialSetup();
     $(QuestionUI.idOptionContainerAdd).hide();
-    SelectPickerUtil.populateSelectPicker(EndPoints.QUESTIONNAIRE_FIELDS, "title", QuestionUI.questionnaireFilter);
+    SelectPickerUtil.populateSelectPickerNew(EndPoints.QUESTIONNAIRE_FIELDS, "title", QuestionUI.questionnaireFilter)
+        .then(() => {
+            const selectElement = QuestionUI.idTableQuestion;
+            if(!selectElement) {
+                console.error("Dropdown not found");
+                return;
+            }
+
+            const choices = new Choices(selectElement, {
+                removeItemButton: true,
+                searchEnabled: false,
+                placeholderValue: "Select a TITLE",
+                noChoicesText: "No TITLE options available",
+            })
+
+            selectElement.addEventListener("change", () => {
+                const selectedValue = selectElement.value;
+                console.log("Selected value:", selectedValue);
+
+                if (!selectedValue){
+                    QuestionController.listQuestion(QuestionUI.idTableQuestion);
+                } else {
+                    null
+                }
+            });
+
+            console.log("Dropdown and event listener successfully initialized");
+        }).catch(error => console.error("Error initializing dropdown:", error));
 
     if (!CommonUtil.hasAuthority("Question (Create)")) {
         $(QuestionUI.idBtnPopAddQuestion).hide();
@@ -19,11 +46,75 @@ $(document).ready(function () {
             $(QuestionUI.idFormQuestionUpdate).hide();
             $(QuestionUI.idFormQuestionImport).hide();
             $(QuestionUI.idFormQuestionAdd).show();
-            SelectPickerUtil.populateSelectPicker(EndPoints.QUESTION_TYPE, "title", QuestionUI.questionTypeAdd);
-            SelectPickerUtil.populateSelectPicker(EndPoints.QUESTIONNAIRE_FIELDS, "title", QuestionUI.questionnaireAdd);
+            SelectPickerUtil.populateSelectPickerNew(EndPoints.QUESTION_TYPE, "title", QuestionUI.questionTypeAdd)
+                .then(() => {
+                    const selectElement = QuestionUI.idBtnPopAddQuestion;
+
+                    if(!selectElement) {
+                        console.error("Dropdown not found");
+                        return;
+                    }
+
+                    if (selectElement){
+                        const choices = new Choices(selectElement, {
+                            removeItemButton: true,
+                            searchEnabled: false,
+                            placeholderValue: "Select a QUESTION TYPE",
+                            noChoicesText: "NO QUESTION options available",
+                        })
+                    } else {
+                        console.error("SelectElement not found in DOM.")
+                    }
+
+
+                    selectElement.addEventListener("change", () => {
+                        const selectedValue = selectElement.value;
+                        console.log("Selected value:", selectedValue);
+
+                        if (!selectedValue){
+                            QuestionController.listQuestion(QuestionUI.idTableQuestion);
+                        } else {
+                            null
+                        }
+                    });
+
+                    console.log("Dropdown and event listener successfully initialized");
+                }).catch(error => console.error("Error initializing dropdown:", error));
+
+
+            SelectPickerUtil.populateSelectPickerNew(EndPoints.QUESTIONNAIRE_FIELDS,
+                "title", QuestionUI.questionnaireAdd)
+                .then(() => {
+                    const selectElement = QuestionUI.idTableQuestion;
+
+                    if(!selectElement){
+                        console.error("Dropdown not found");
+                        return;
+                    }
+
+                    const choices = new Choices(selectElement, {
+                        removeItemButton: true,
+                        searchEnabled: false,
+                        placeholderValue: "Select a QUESTIONNAIRE",
+                        noChoicesText: "No QUESTIONNAIRE options available",
+                    })
+
+                    selectElement.addEventListener("change", () => {
+                        const selectedValue = selectElement.value;
+                        console.log("Selected value:", selectedValue);
+
+                        if(!selectedValue){
+                            QuestionController.listQuestion(QuestionUI.idTableQuestion);
+                        } else {
+                            null
+                        }
+                    });
+                    console.log("Dropdown and event listener successfully initialized");
+                }).catch(error => console.error("Error initializing dropdown:", error));
+
             QuestionUI.modalQuestionTitle.textContent = "Add Question";
             $(QuestionUI.idModalQuestion).modal("show");
-        });
+        })
 
         QuestionUI.questionTypeAdd.addEventListener("change", function (event) {
             let selectedOption = event.currentTarget.options[event.currentTarget.options.selectedIndex];
@@ -76,7 +167,7 @@ $(document).ready(function () {
 
             //SelectPicker
             let notifyUserSelectPicker = document.createElement("select");
-            notifyUserSelectPicker.classList.add("selectpicker", "show-tick", "col-sm-8");
+            notifyUserSelectPicker.classList.add("col-sm-8");
             notifyUserSelectPicker.setAttribute("title", "Notify User");
             notifyUserSelectPicker.setAttribute("name", "notifyUser");
             notifyUserDiv.appendChild(notifyUserSelectPicker);
@@ -91,7 +182,6 @@ $(document).ready(function () {
             option2.textContent = "No";
 
             notifyUserSelectPicker.appendChild(option2);
-            $(notifyUserSelectPicker).selectpicker("refresh");
 
             div.appendChild(notifyUserDiv);
             /* -------------------------- End Notify User Div ----------------------------------------- */
@@ -123,7 +213,7 @@ $(document).ready(function () {
 
             //Notify Other SelectPicker
             let notifyOtherSelectPicker = document.createElement("select");
-            notifyOtherSelectPicker.classList.add("selectpicker", "show-tick", "col-sm-8");
+            notifyOtherSelectPicker.classList.add("col-sm-8");
             notifyOtherSelectPicker.setAttribute("title", "Notify Other");
             notifyOtherSelectPicker.setAttribute("name", "notifyOther");
             notifyOtherDiv.appendChild(notifyOtherSelectPicker);
@@ -138,7 +228,6 @@ $(document).ready(function () {
             optionNotifyOther2.textContent = "No";
 
             notifyOtherSelectPicker.appendChild(optionNotifyOther2);
-            $(notifyOtherSelectPicker).selectpicker("refresh");
             div.appendChild(notifyOtherDiv);
             /* -------------------------- End Notify Other Div ----------------------------------------- */
 
@@ -175,7 +264,7 @@ $(document).ready(function () {
             buttonRemove.appendChild(iButtonRemove);
 
             let questionnaireSelect = document.createElement("select");
-            questionnaireSelect.setAttribute("class", "selectpicker show-tick mr-1");
+            questionnaireSelect.setAttribute("class", " mr-1");
             questionnaireSelect.setAttribute("name", "questionnaire");
             questionnaireSelect.setAttribute("title", "Select");
 
@@ -391,7 +480,35 @@ $(document).ready(function () {
         QuestionUI.id.value = question.id;
         QuestionUI.titleUpdate.value = question.title;
         QuestionUI.bodyUpdate.value = question.body;
-        SelectPickerUtil.populateSelectPicker(EndPoints.QUESTION_TYPE, "title", QuestionUI.questionTypeUpdate, question.questionType.id);
+        SelectPickerUtil.populateSelectPickerNew(EndPoints.QUESTION_TYPE, "title",
+            QuestionUI.questionTypeUpdate, question.questionType.id)
+            .then(() => {
+                const selectElement = QuestionUI.idTableQuestion;
+
+                if (!selectElement){
+                    console.error("Dropdown  not found");
+                    return;
+                }
+
+                const choices = new Choices(selectElement, {
+                    removeItemButton : true,
+                    searchEnabled: false,
+                    placeholderValue: "Select a QUESTION TYPE",
+                    noChoicesText: "No Question Type available",
+                })
+
+                selectElement.addEventListener("change", () => {
+                    const selectedValue= selectElement.value;
+                    console.log("Selected value:", selectedValue);
+
+                    if (!selectedValue){
+                        QuestionController.listQuestion(QuestionUI.idTableQuestion);
+                    } else {
+                        null
+                    }
+                });
+                console.log("Dropdown and event listener successfully initialized");
+            }).catch(error => console.error("Error initializing dropdown:", error));
 
         if (question.questionQuestionnaires && question.questionQuestionnaires.length > 0) {
             $(QuestionUI.idQuestionnaireAdditionUpdate).empty();
@@ -436,7 +553,35 @@ $(document).ready(function () {
                 div.appendChild(inputDisplayOrder);
                 div.appendChild(buttonRemove);
 
-                SelectPickerUtil.populateSelectPicker(EndPoints.QUESTIONNAIRE_FIELDS, "title", questionnaireSelect, item.questionnaire.id);
+                SelectPickerUtil.populateSelectPickerNew(EndPoints.QUESTIONNAIRE_FIELDS,
+                    "title", questionnaireSelect, item.questionnaire.id)
+                    .then(() => {
+                       const selectElement = QuestionUI.idTableQuestion;
+
+                       if (!selectElement){
+                           console.error("Dropdown not found");
+                           return;
+                       }
+
+                       const choices = new Choices(selectElement, {
+                           removeItemButton: true,
+                           searchEnabled: false,
+                           placeholderValue: "Select a QUESTIONNAIRE",
+                           noChoicesText: "No QUESTIONNAIRE options available",
+                       })
+
+                        selectElement.addEventListener("change", () => {
+                            const selectedValue = selectElement.value;
+                            console.log("Selected value:", selectedValue);
+
+                            if(!selectedValue){
+                                QuestionController.listQuestion(QuestionUI.idTableQuestion);
+                            } else {
+                                null
+                            }
+                        });
+                       console.log("Dropdown and event listener successfully initialized");
+                }).catch(error => console.error("Error initializing dropdown", error));
 
                 QuestionUI.idQuestionnaireAdditionUpdate.appendChild(div);
             });
@@ -496,7 +641,7 @@ $(document).ready(function () {
                 notifyUserDiv.appendChild(notifyUserLabel);
 
                 let notifyUserSelectPicker = document.createElement("select");
-                notifyUserSelectPicker.classList.add("selectpicker", "show-tick", "col-sm-8");
+                notifyUserSelectPicker.classList.add("form-control", "show-tick", "col-sm-8");
                 notifyUserSelectPicker.setAttribute("title", "Notify User");
                 notifyUserSelectPicker.setAttribute("name", "notifyUser");
                 notifyUserDiv.appendChild(notifyUserSelectPicker);
@@ -512,9 +657,9 @@ $(document).ready(function () {
 
                 notifyUserSelectPicker.appendChild(option2);
                 if (item.notifyUser !== undefined) {
-                    $(notifyUserSelectPicker).selectpicker("val", item.notifyUser ? "YES" : "NO");
+                    notifyUserSelectPicker.value = item.notifyUser ? "YES" : "NO";
+                    // $(notifyUserSelectPicker).selectpicker("val", item.notifyUser ? "YES" : "NO");
                 }
-                $(notifyUserSelectPicker).selectpicker("refresh");
                 div.appendChild(notifyUserDiv);
 
                 //Notify Other
@@ -540,7 +685,7 @@ $(document).ready(function () {
                 notifyOtherDiv.appendChild(notifyOtherLabel);
 
                 let notifyOtherSelectPicker = document.createElement("select");
-                notifyOtherSelectPicker.classList.add("selectpicker", "show-tick", "col-sm-8");
+                notifyOtherSelectPicker.classList.add("show-tick", "col-sm-8");
                 notifyOtherSelectPicker.setAttribute("title", "Notify Other");
                 notifyOtherSelectPicker.setAttribute("name", "notifyOther");
                 notifyOtherDiv.appendChild(notifyOtherSelectPicker);
@@ -556,9 +701,8 @@ $(document).ready(function () {
 
                 notifyOtherSelectPicker.appendChild(optionNotifyOther2);
                 if (item.notifyOther !== undefined) {
-                    $(notifyOtherSelectPicker).selectpicker("val", item.notifyOther ? "YES" : "NO");
+                    notifyOtherSelectPicker.value = item.notifyOther ? "YES" : "NO";
                 }
-                $(notifyOtherSelectPicker).selectpicker("refresh");
                 div.appendChild(notifyOtherDiv);
 
                 QuestionUI.idOptionAdditionUpdate.appendChild(div);
@@ -623,7 +767,6 @@ $(document).ready(function () {
         option2.textContent = "No";
 
         notifyUserSelectPicker.appendChild(option2);
-        $(notifyUserSelectPicker).selectpicker("refresh");
 
         div.appendChild(notifyUserDiv);
         /* -------------------------- End Notify User Div ----------------------------------------- */
@@ -655,7 +798,7 @@ $(document).ready(function () {
 
         //Notify Other SelectPicker
         let notifyOtherSelectPicker = document.createElement("select");
-        notifyOtherSelectPicker.classList.add("selectpicker", "show-tick", "col-sm-8");
+        notifyOtherSelectPicker.classList.add("col-sm-8");
         notifyOtherSelectPicker.setAttribute("title", "Notify Other");
         notifyOtherSelectPicker.setAttribute("name", "notifyOther");
         notifyOtherDiv.appendChild(notifyOtherSelectPicker);
@@ -670,7 +813,6 @@ $(document).ready(function () {
         optionNotifyOther2.textContent = "No";
 
         notifyOtherSelectPicker.appendChild(optionNotifyOther2);
-        $(notifyOtherSelectPicker).selectpicker("refresh");
         div.appendChild(notifyOtherDiv);
         /* -------------------------- End Notify Other Div ----------------------------------------- */
 
@@ -692,10 +834,38 @@ $(document).ready(function () {
         div.setAttribute("class", "row m-1 questionQuestionnaireUpdate");
 
         let questionnaireSelect = document.createElement("select");
-        questionnaireSelect.setAttribute("class", "selectpicker show-tick mr-1");
+        questionnaireSelect.setAttribute("class", "mr-1");
         questionnaireSelect.setAttribute("name", "questionnaireUpdate");
         questionnaireSelect.setAttribute("title", "Select");
-        SelectPickerUtil.populateSelectPicker(EndPoints.QUESTIONNAIRE_FIELDS, "title", questionnaireSelect);
+        SelectPickerUtil.populateSelectPickerNew(EndPoints.QUESTIONNAIRE_FIELDS, "title", questionnaireSelect)
+            .then(() => {
+                const selectElement=  QuestionUI.idQuestionnaireContainerUpdate;
+
+                if(!selectElement){
+                    console.error("No dropdown found");
+                    return;
+                }
+
+                const choices = new Choices (selectElement, {
+                    removeItemButton: true,
+                    searchEnabled: false,
+                    placeholderValue: "Select a QUESTIONNAIRE fIELD",
+                    NoChoicesText: "No QUESTIONNAIRE options available",
+                })
+
+                selectElement.addEventListener("change", () => {
+                    const selectedValue = selectElement.value;
+                    console.log("Selected value:", selectedValue);
+
+                    if (!selectedValue) {
+                        QuestionController.listQuestion(QuestionUI.idTableQuestion);
+                    } else {
+                        null
+                    }
+                });
+                console.log("Dropdown and event listener successfully initialized");
+            }).catch(error => console.error("error initializing dropdown:", error));
+
         div.appendChild(questionnaireSelect);
 
         let inputDisplayOrder = document.createElement("input");
@@ -725,7 +895,7 @@ $(document).ready(function () {
         }
     });
 
-    //Question Update Form submission
+    //Question Update Form submission-
     $(QuestionUI.idFormQuestionUpdate).validate({
         rules: {
             questionType: "required",

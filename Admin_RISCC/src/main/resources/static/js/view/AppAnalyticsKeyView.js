@@ -38,8 +38,8 @@ $(document).ready(function () {
 
                 AppAnalyticsKeyController.addAppAnalyticsKey(form, requestBody, function () {
                     AppAnalyticsKeyController.listAppAnalyticsKey(AppAnalyticsKeyUI.idTableAppAnalyticsKey);
-                    $(AppAnalyticsKeyUI.appAnalyticsKeyDataTypeAdd).val("default");
-                    $(AppAnalyticsKeyUI.appAnalyticsKeyDataTypeAdd).selectpicker("refresh");
+                    $(AppAnalyticsKeyUI.appAnalyticsKeyDataTypeAdd).val("DATETIME");
+                    // $(AppAnalyticsKeyUI.appAnalyticsKeyDataTypeAdd).selectpicker("refresh");
                 });
             }
         });

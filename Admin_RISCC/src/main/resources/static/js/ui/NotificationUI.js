@@ -17,7 +17,7 @@ export let groupContainer = document.querySelector("#groupContainer");
 export let groups = idFormNotificationAdd.querySelector("select[name='groups']");
 export let userContainer = document.querySelector("#userContainer");
 export let idUserSelectPagination = document.querySelector("#idUserSelectPagination");
-export let users = idFormNotificationAdd.querySelector("select[name='users'");
+export let users = idFormNotificationAdd.querySelector("select[name='users']");
 
 
 //Delete

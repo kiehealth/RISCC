@@ -6,8 +6,9 @@
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
     <!-- Bootstrap CSS, Fontawesome CSS -->
-    <link href="/lib/bootstrap/bootstrap.4.2.1.min.css" rel="stylesheet">
-    <link href="/lib/fontawesome/css/all.5.6.3.min.css" rel="stylesheet">
+    <link href="/lib/bootstrap/bootstrap.5.3.3.min.css" rel="stylesheet">
+    <link href="/lib/fontawesome/css/all.6.7.1.min.css" rel="stylesheet">
+    <link href="lib/choices/choices.min.css" rel="stylesheet">
     <link href="/lib/bootstrap.selectpicker.1.13.2/bootstrap-select.min.css" rel="stylesheet">
     <link href="/lib/DataTables/datatables.min.css" rel="stylesheet">
     <!-- Scrollbar Custom CSS -->
@@ -40,16 +41,20 @@
 
                 <div class="d-flex align-items-center ml-auto">
                     <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                            class="btn btn-dark d-inline-block d-lg-none ml-auto" data-target="#navbarSupportedContent"
-                            data-toggle="collapse" type="button">
+                            class="btn btn-dark d-inline-block d-lg-none ml-auto"
+                            data-bs-target="#navbarSupportedContent"
+                            data-bs-toggle="collapse" type="button">
                         <i class="fas fa-align-justify"></i>
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="#" id="idButtonLogout"><span class="color-red"><i
-                                        class="fas fa-sign-out-alt"></i> Logout</span></a>
+                                <a class="nav-link" href="#" id="idButtonLogout">
+                                    <span class="color-red">
+                                        <i class="fas fa-sign-out-alt"></i> Logout
+                                    </span>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -59,11 +64,10 @@
 
         <!-- Questionnaire -->
         <div class="card">
-            <div class="card-header">
-                <h5 class="float-left">Questionnaire</h5>
-                <button class="btn btn-link float-right" id="idBtnPopAddQuestionnaire"><i
-                        class="fas fa-plus-circle"></i>
-                    Questionnaire
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5>Questionnaire</h5>
+                <button class="btn  float-end" id="idBtnPopAddQuestionnaire">
+                    <i class="fas fa-plus-circle"></i>Questionnaire
                 </button>
             </div>
             <div class="card-body">
@@ -83,14 +87,12 @@
         </div>
 
         <!-- Modal for Questionnaire -->
-        <div class="modal fade" data-backdrop="static" id="idModalQuestionnaire" role="dialog" tabindex="-1">
-            <div class="modal-dialog modal-lg" role="document">
+        <div class="modal fade" data-bs-backdrop="static" id="idModalQuestionnaire" role="dialog" tabindex="-1">
+            <div class="modal-dialog modal-lg" >
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title"></h5>
-                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
                     </div>
                     <div class="modal-body">
                         <!-- Questionnaire Form Add -->
@@ -102,7 +104,7 @@
                                 </div>
                             </div>
                             <div class="offset-2">
-                                <button class="btn btn-primary" name="add" type="submit">Add</button>
+                                <button class="btn btn-primary mt-2" name="add" type="submit">Add</button>
                             </div>
                         </form>
                         <!-- End -->
@@ -110,10 +112,10 @@
                         <!-- Questionnaire Form Update -->
                         <form id="idFormQuestionnaireUpdate">
                             <input name="id" type="hidden">
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Title *</label>
+                            <div class="mb-3 row">
+                                <label class="col-sm-2 col-form-label ">Title *</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="title" type="text">
+                                    <input class="form-control " name="title" type="text">
                                 </div>
                             </div>
                             <div class="offset-2">
@@ -135,16 +137,14 @@
 
                     <div class="modal-header">
                         <h5 class="modal-title">Delete Questionnaire</h5>
-                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
                     </div>
 
                     <div class="modal-body">
                         <p>Are you sure you want to delete this questionnaire? You won't be able to recover it.</p>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
+                        <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Cancel</button>
                         <button class="btn btn-primary" id="idBtnQuestionnaireDelete" type="button">Delete</button>
                     </div>
                 </div>
@@ -156,25 +156,33 @@
 
 
         <div class="card mt-5">
-            <div class="card-header clearfix">
-                <h5 class="float-left">Question</h5>
-                <button class="btn btn-link float-right" id="idBtnPopAddQuestion"><i class="fas fa-plus-circle"></i>
-                    Question
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5>Question</h5>
+                <button class="btn  float-end" id="idBtnPopAddQuestion">
+                    <i class="fas fa-plus-circle"></i>Question
                 </button>
             </div>
 
-            <div class="row pt-4 pb-3">
+            <div class=" pt-4 pb-1 ">
                 <button class="pl-5 btn btn-link" id="idBtnQuestionTemplate"><i
                         class="fas fa-file-export"></i>
                     Template
                 </button>
                 <button class="btn btn-link" id="idBtnPopImportQuestion"><i class="fas fa-file-import"></i>
-                    Import
-                    Question
+                    Import Question
                 </button>
             </div>
 
-            <select class="selectpicker show-tick" id="questionnaireFilter" title="Select Questionnaire"></select>
+            <form class="clearfix  " id="idFormQuestionFilter">
+                <div class="col-4 pl-2">
+                    <select  id="questionnaireFilter" class="form-select m-2 px-lg-2 col-12"
+                             aria-label="Select Questionnaire type "
+                             >
+                        <option value="" >Filter</option>
+                    </select>
+                </div>
+            </form>
+
             <!--<form class="mt-3 ml-2" id="idFormQuestionFilter">
                 <button class="btn btn-primary" name="questionFilter" type="submit">Filter</button>
             </form>-->
@@ -203,14 +211,12 @@
 
 
 <!-- Modal for Question -->
-<div class="modal fade" data-backdrop="static" id="idModalQuestion" role="dialog" tabindex="-1">
+<div class="modal fade" data-bs-backdrop="static" id="idModalQuestion" role="dialog" tabindex="-1">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"></h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
             <div class="modal-body">
 
@@ -243,16 +249,17 @@
 
                     <!-- Questionnaire with display Order -->
                     <div class="form-group row" id="idQuestionnaireContainerAdd">
-                        <label class="col-sm-3 col-form-label">Questionnaire</label>
+                        <label class="col-sm-3 col-form-label mb-3">Questionnaire</label>
                         <div class="col-sm-9 border rounded">
                             <button class="btn btn-link" id="idBtnAddQuestionnaireAdd">Add Questionnaire<i
                                     class="fas fa-plus-circle"></i>
                             </button>
                             <div id="idQuestionnaireAdditionAdd">
                                 <div class="row m-1 questionQuestionnaire">
-                                    <select class="selectpicker show-tick mr-1"
+                                    <select class="form-select  mr-1 mb-2" data-width="100%"
                                             name="questionnaire"
-                                            title="Select">
+                                            aria-label="Select">
+                                        <option value="">Select</option>
                                     </select>
                                     <input class="form-control col-sm-4" name="questionnaireDisplayOrder"
                                            placeholder="Display Order" type="text">
@@ -263,25 +270,26 @@
                         </div>
                     </div>
 
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Title *</label>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label mb-3 ">Title *</label>
                         <div class="col-sm-9">
-                            <input class="form-control" name="title" type="text">
+                            <input class="form-control mt-2" name="title" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Body</label>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label mb-3">Body</label>
                         <div class="col-sm-9">
                             <textarea class="form-control" name="body" type="text"></textarea>
                         </div>
                     </div>
 
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Question Type</label>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label mb-3">Question Type</label>
                         <div class="col-sm-9">
-                            <select class="selectpicker show-tick" data-width="100%"
+                            <select class="form-select " data-width="100%"
                                     name="questionType"
-                                    title="Select">
+                                    aria-label="Select">
+                                <option value="">Select</option>
                             </select>
                         </div>
                     </div>
@@ -312,7 +320,7 @@
                                     </div>
                                     <div class="row">
                                         <label class="col-sm-3 col-form-label">Notify User:</label>
-                                        <select class="selectpicker show-tick col-sm-9"
+                                        <select class=" form-control col-sm-9"
                                                 name="notifyUser" title="Notify User">
                                             <option value="YES">Yes</option>
                                             <option value="NO">No</option>
@@ -323,9 +331,9 @@
                                         <input class="form-control col-sm-8 ml-3" name="otherEmail"
                                                placeholder="Other Email" type="email">
                                         <label class="col-form-label col-sm-3">Notify Other:</label>
-                                        <select class="selectpicker show-tick col-sm-9"
+                                        <select class="form-control show-tick col-sm-9"
                                                 data-placement="top" data-toggle="tooltip" name="notifyOther"
-                                                title="Notify Other">
+                                                aria-label="Notify Other">
                                             <option value="YES">Yes</option>
                                             <option value="NO">No</option>
                                         </select>
@@ -345,7 +353,7 @@
                 <form id="idFormQuestionUpdate">
                     <input name="id" type="hidden">
                     <!-- Questionnaire with display Order -->
-                    <div class="form-group row" id="idQuestionnaireContainerUpdate">
+                    <div class="mb-3 row" id="idQuestionnaireContainerUpdate">
                         <label class="col-sm-3 col-form-label">Questionnaire</label>
                         <div class="col-sm-9 border rounded">
                             <button class="btn btn-link" id="idBtnAddQuestionnaireUpdate">Add Questionnaire<i
@@ -355,29 +363,30 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Title *</label>
                         <div class="col-sm-9">
                             <input class="form-control" name="title" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Body</label>
                         <div class="col-sm-9">
                             <textarea class="form-control" name="body" type="text"></textarea>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Question Type</label>
                         <div class="col-sm-9">
-                            <select class="selectpicker show-tick" data-width="100%"
+                            <select class="form-select " data-width="100%"
                                     name="questionType"
-                                    title="Select">
+                                    aria-label="Select">
+                                <option value="">Select</option>
                             </select>
                         </div>
                     </div>
 
-                    <div class="form-group row" id="idOptionContainerUpdate">
+                    <div class="mb-3 row" id="idOptionContainerUpdate">
                         <label class="col-sm-3 col-form-label">Options</label>
                         <div class="col-sm-9 border rounded">
                             <button class="btn btn-link" id="idBtnAddOptionUpdate">Add Option <i
@@ -399,7 +408,9 @@
                                name="excelFile"
                                type="file">
                     </div>
-                    <button class="btn btn-primary" name="import" type="submit">Import</button>
+                      <button class="btn btn-primary mt-lg-2" name="import" type="submit">
+                          Import
+                      </button>
                 </form>
             </div>
         </div>
@@ -414,16 +425,14 @@
 
             <div class="modal-header">
                 <h5 class="modal-title">Delete Question</h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
 
             <div class="modal-body">
                 <p>Are you sure you want to delete this question? You won't be able to recover it.</p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
+                <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Cancel</button>
                 <button class="btn btn-primary" id="idBtnQuestionDelete" type="button">Delete</button>
             </div>
         </div>
@@ -439,16 +448,14 @@
 
             <div class="modal-header">
                 <h5 class="modal-title">Response</h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
 
             <div class="modal-body">
                 <p></p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+                <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
             </div>
         </div>
     </div>
@@ -457,7 +464,8 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="/lib/jquery/jquery-3.3.1.min.js"></script>
 <script src="/lib/popper/popper.min.js"></script>
-<script src="/lib/bootstrap/bootstrap.4.2.1.min.js"></script>
+<script src="/lib/choices/choices.min.js"></script>
+<script src="/lib/bootstrap/bootstrap.5.3.3.min.js"></script>
 <script src="/lib/jquery_validation/jquery.validate.1.19.0.min.js"></script>
 <script src="/lib/bootstrap.selectpicker.1.13.2/bootstrap-select.min.js"></script>
 <script src="/lib/DataTables/datatables.min.js"></script>

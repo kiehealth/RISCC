@@ -6,8 +6,8 @@
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
     <!-- Bootstrap CSS, Fontawesome CSS -->
-    <link href="/lib/bootstrap/bootstrap.5.3.1.min.css" rel="stylesheet">
-    <link href="/lib/fontawesome/css/all.5.6.3.min.css" rel="stylesheet">
+    <link href="/lib/bootstrap/bootstrap.5.3.3.min.css" rel="stylesheet">
+    <link href="/lib/fontawesome/css/all.6.7.1.min.css" rel="stylesheet">
     <link href="/lib/DataTables/datatables.min.css" rel="stylesheet">
     <!-- Scrollbar Custom CSS -->
     <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"
@@ -31,7 +31,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <div class="d-flex align-content-center">
-                    <button class="btn btn-lg red" id="sidebarCollapse" type="button">
+                    <button class="btn btn-lg navMenuHideShowButton" id="sidebarCollapse" type="button">
                         <i class="fas fa-bars"></i>
                         <span></span>
                     </button>
@@ -39,8 +39,9 @@
 
                 <div class="d-flex align-items-center ml-auto">
                     <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                            class="btn btn-dark d-inline-block d-lg-none ml-auto" data-target="#navbarSupportedContent"
-                            data-toggle="collapse" type="button">
+                            class="btn btn-dark d-inline-block d-lg-none ml-auto"
+                            data-bs-target="#navbarSupportedContent"
+                            data-bs-toggle="collapse" type="button">
                         <i class="fas fa-align-justify"></i>
                     </button>
 
@@ -84,39 +85,37 @@
 
 
 <!-- Modal for ErrorMessage -->
-<div class="modal fade" data-backdrop="static" id="idModalErrorMessage" role="dialog" tabindex="-1">
+<div class="modal fade" data-bs-backdrop="static" id="idModalErrorMessage" role="dialog" tabindex="-1">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"></h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
             <div class="modal-body">
 
                 <!-- ErrorMessage Form Update -->
                 <form id="idFormErrorMessageUpdate">
                     <input name="id" type="hidden">
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label">Code</label>
                         <div class="col-sm-9">
                             <input class="form-control" name="code" readonly type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label">English</label>
                         <div class="col-sm-9">
                             <input class="form-control" name="english" readonly type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label">Swedish</label>
                         <div class="col-sm-9">
                             <input class="form-control" name="swedish" type="text">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="row mb-3">
                         <label class="col-sm-3 col-form-label">Spanish</label>
                         <div class="col-sm-9">
                             <input class="form-control" name="spanish" type="text">
@@ -141,16 +140,14 @@
 
             <div class="modal-header">
                 <h5 class="modal-title">Response</h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
             </div>
 
             <div class="modal-body">
                 <p></p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+                <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
             </div>
         </div>
     </div>
@@ -159,7 +156,7 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="/lib/jquery/jquery-3.3.1.min.js"></script>
 <script src="/lib/popper/popper.min.js"></script>
-<script src="/lib/bootstrap/bootstrap.5.3.1.min.js"></script>
+<script src="/lib/bootstrap/bootstrap.5.3.3.min.js"></script>
 <script src="/lib/jquery_validation/jquery.validate.1.19.0.min.js"></script>
 <script src="/lib/DataTables/datatables.min.js"></script>
 <script src="/js/util/DataTableUtil.js"></script>
