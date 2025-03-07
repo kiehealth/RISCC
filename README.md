@@ -1,4 +1,4 @@
-# **RISCC IT framework**
+# RISCC IT framework
 
 [RISC Mobile App](#risc-mobile-app)
 
@@ -6,7 +6,7 @@
 
 [Main functionalities](#main-functionalities)
 
-[Menu option “Question”](#menu-option-“question”)
+[Menu option “Question”](#menu-option-question)
 
 [Admin application test environment](#admin-application-test-environment)
 
@@ -30,43 +30,43 @@
 
 [Deploying an iOS App](#deploying-an-ios-app)
 
-[1\. Prepare Your App for Release](#1.-prepare-your-app-for-release)
+[1. Prepare Your App for Release](#1-prepare-your-app-for-release)
 
-[2\. Create an Apple Developer Account](#2.-create-an-apple-developer-account)
+[2. Create an Apple Developer Account](#2-create-an-apple-developer-account)
 
-[3\. Set Up App Store Connect](#3.-set-up-app-store-connect)
+[3. Set Up App Store Connect](#3-set-up-app-store-connect)
 
-[4\. Configure Certificates and Profiles](#4.-configure-certificates-and-profiles)
+[4. Configure Certificates and Profiles](#4-configure-certificates-and-profiles)
 
-[5\. Create App Store Listing](#5.-create-app-store-listing)
+[5. Create App Store Listing](#5-create-app-store-listing)
 
-[6\. Generate Release Build](#6.-generate-release-build)
+[6. Generate Release Build](#6-generate-release-build)
 
 [In Xcode:](#in-xcode:)
 
-[7\. Submit to App Store](#7.-submit-to-app-store)
+[7. Submit to App Store](#7-submit-to-app-store)
 
-[8\. Submit for Review](#8.-submit-for-review)
+[8. Submit for Review](#8-submit-for-review)
 
-[9\. Manage Your App](#9.-manage-your-app)
+[9. Manage Your App](#9-manage-your-app)
 
 [Alternative Distribution Methods](#alternative-distribution-methods)
 
 [Deploying an Android App](#deploying-an-android-app)
 
-[1\. Prepare Your App for Release](#1.-prepare-your-app-for-release-1)
+[1. Prepare Your App for Release](#1-prepare-your-app-for-release-1)
 
-[2\. Generate a Release Build](#2.-generate-a-release-build)
+[2. Generate a Release Build](#2-generate-a-release-build)
 
-[3\. Test Your Release Build](#3.-test-your-release-build)
+[3. Test Your Release Build](#3-test-your-release-build)
 
-[4\. Create a Google Play Developer Account](#4.-create-a-google-play-developer-account)
+[4. Create a Google Play Developer Account](#4-create-a-google-play-developer-account)
 
-[5\. Set Up Your Google Play Console](#5.-set-up-your-google-play-console)
+[5. Set Up Your Google Play Console](#5-set-up-your-google-play-console)
 
-[6\. Upload Your App](#6.-upload-your-app)
+[6. Upload Your App](#6-upload-your-app)
 
-[7\. Manage Your App](#7.-manage-your-app)
+[7. Manage Your App](#7-manage-your-app)
 
 [Alternative Distribution Methods](#alternative-distribution-methods-1)
 
@@ -82,17 +82,17 @@
 
 [GitHub Repository](#github-repository)
 
-# **RISC Mobile App**  {#risc-mobile-app}
+# RISC Mobile App
 
 The RISCC mobile platform enables screening programs to collect risk factors and other information from study participants through questionnaires. Participants use a mobile app to answer questions, learn about the study and communicate with the study managers.
 
 ![](img/1.jpg)
 
-## **Admin Application** {#admin-application}
+## Admin Application
 
 This is a web application to be used by the study PI, researchers, and managers. 
 
-### **Main functionalities** {#main-functionalities}
+### Main functionalities
 
 * Create a list of allowed users participating in the study or studies. That way, even though anyone can download the RISCC app on their mobile device, only allowed users can create an account.  
 * Create groups of participants that will receive different questionnaires based on selection criteria.  
@@ -101,16 +101,18 @@ This is a web application to be used by the study PI, researchers, and managers.
 * Manage users and answers from users  
 * Download answers as CSV to be analysed with RISCC analysis tools
 
-### **Menu option “Question”** {#menu-option-“question”}
+### Menu option “Question”
 
-**Create questionnaire:** Several questionnaires can be created, and questions can be in several questionnaires.  
-**Add questions to the questionnaire:**  Questions can be added interactively through the user interface (UI) or by importing an Excel file based on the provided template.  
+#### Create questionnaire  
+Several questionnaires can be created, and questions can be in several questionnaires.  
+#### Add questions to the questionnaire:  
+Questions can be added interactively through the user interface (UI) or by importing an Excel file based on the provided template.  
  
 
 ![](img/2.jpg)
 
    
-**Creating a question in the UI**  
+#### Creating a question in the UI
    
 A question belongs to a “Questionnaire” and has an order in that questionnaire. In figure 2, the questionnaire is “Questionnaire 1” and appears as the fourth question in the app, the title is “Question 4”, and the body is “Body of question 4”. The question has two options, and you can select only one (“Yes” or “No”).  
    
@@ -121,13 +123,13 @@ The same question can be in several questionnaires in different orders.
    
 When questions are imported using the template, adjustments must be made to each question, such as the message for notifying the participant by email, depending on the answer.  
    
-**Menu option “Answer”**  
+### Menu option “Answer”
 This option shows the answers from the participants.  
 All the answers from a defined period can be exported. Answers can also be filtered by questionnaire and user. The filter result can be exported as CSV or PDF, and columns from the table can be filtered out to show or export what is needed.  
    
 ![](img/4.jpg)
    
-**Menu option “Link”**  
+### Menu option “Link”
    
 This option allows adding relevant links that will be available to the participants in the app.  
 ![](img/5.jpg)
@@ -135,7 +137,7 @@ In the app, the participant can access the link:
 ![](img/6.jpg)
  
 
-**Menu option “User”**  
+### Menu option “User”
    
 The User window shows all the users in the database. The users can have different roles that can be customised in another menu option. By default, the system provides *Admin* and *Participant* roles. All the user accounts created by the participants from the mobile app are assigned the role “Participant”.  
    
@@ -145,12 +147,16 @@ In the window “User”, the Admin role can create other users.
 Four actions can be done with the users:
 
 ![](img/8.jpg)
-**Edit**: Edit the user information  
-**More info**: Shows user information  
-**Delete answer**: delete all the answers from the user  
-**Delete**: Delete the user from the database, but only before the answers are deleted  
+#### Edit  
+Edit the user information  
+#### More info
+Shows user information  
+#### Delete answer
+delete all the answers from the user  
+#### Delete
+Delete the user from the database, but only before the answers are deleted  
    
-**Menu option “Group”**  
+### Menu option “Group”
    
 This option allows the creation of groups of participants that can be assigned different questionnaires.  
 ![](img/9.jpg)
@@ -158,7 +164,7 @@ This option allows the creation of groups of participants that can be assigned d
 When a group is created, the admin role provides the group name, adds the questionnaires for the group, sets the activation time for each questionnaire, sets the remainder text that will appear in the app, and sets the interval time for reminders.  
 ![](img/10.jpg)
    
-**Menu option “Notification”**  
+### Menu option “Notification”
    
 This option allows the admin role to create and send notifications to the participants. The app receives the notifications if notifications are enabled for the RISCC app on the participant's mobile device.  
 ![](img/11.jpg)
@@ -174,23 +180,23 @@ Feedback from the mobile device:
 Feedback shown in the backend  
 ![](img/13.jpg)
    
-**Menu option “Utility”/Allowed Registration”**  
+### Menu option “Utility”/Allowed Registration”
    
 The relevant function of the " Utility option "is “Allowed Registration.” This feature allows anyone to download the app from AppStore or Google Play, but only those whose emails are registered in the system can create user accounts from the mobile app.  
 The allowed emails can be added through the UI (“+Allowed Registration”) or by importing a list using the template.  
 ![](img/14.jpg)
 
-**Menu option “Setting”**  
+### Menu option “Setting”
    
 The relevant functions in the settings windows are setting the Project Responsible information, the welcome and thanks texts, and a PDF file with the information for the participants that will be shown in the app.  
    
 ![](img/15.jpg)
 
-### **Admin application test environment** {#admin-application-test-environment}
+### Admin application test environment
 
 [https://riscc-vaccination.org](https://riscc-vaccination.org) 
 
-# **Mobile App** {#mobile-app}
+# Mobile App
 
 This app is to be used by the study participant in basically any study or screening program. In principle, once the app is deployed in AppStore and Google Play, any person can download the app and install it in her mobile device. However, to be able to create an account, the participant must be authorised by the admin role. It has been explained in the backend functionalities.  
 The governance system established for the study or screening program should take care of inviting the participants and updating the allowed participant list in the backend system.
@@ -199,7 +205,7 @@ Before creating the account, the participant must consent to the study or screen
    
 ![](img/16.jpg)
 
-## **Main functionalities** {#main-functionalities-1}
+## Main functionalities
 
 * Consent participation (Consent document (PDF) can be uploaded into the admin application)  
 * Fill questionnaires  
@@ -209,7 +215,7 @@ Before creating the account, the participant must consent to the study or screen
 ![](img/17.jpg)
 ![](img/18.jpg "Graphical user interface, text, application, chat or text messageDescription)automatically generated")
 
-## **Create a participant account** {#create-a-participant-account}
+## Create a participant account
 
 Once the app is installed on the mobile device and the user has consented to participate, a screen for signing up is presented. The participant fills the user information and agrees with the “Terms of Service”.
 
@@ -222,11 +228,11 @@ Once the account is created, the user can log in, and the default questionnaire 
 The participant can fill the questionnaire and see the answer to the questions clicking “Answer” icon.  
  
 
-### **App bottom menu** {#app-bottom-menu}
+### App bottom menu
 
 ![](img/21.jpg)
 
-### **App main menu** {#app-main-menu}
+### App main menu
 
    
 The upper left icon opens the app's main menu.  
@@ -241,7 +247,7 @@ Through this menu, the participant accesses the functions in the bottom menu and
 **Change Password:** Change user password after providing the old password  
 **Log Out:** Log out the app
 
-## **Risk calculation in the RISCC mobile platform** {#risk-calculation-in-the-riscc-mobile-platform}
+## Risk calculation in the RISCC mobile platform
 
 The RISCC mobile platform was developed as generic software to enable different use cases in a screening program. For instance, the same mobile platform can be used to gather information from participants in a vaccination campaign, help decide the target population for HPV screening or research studies, warn participants about visiting a clinician, or educate participants about the program, for instance, on how to use the self-sampling kit or where to access information about cervical cancer prevention and treatment.
 
@@ -253,7 +259,7 @@ For instance, Figure 1 shows option 1 of question 2 of the “HPV-screening \#1�
 
 This means all the questions (and options per question) are related and must be carefully designed.
 
-Table 1\. Example of a questionnaire with risk-stratification to select target population for screening (20 \< Age \< 35, not HPV test in the last 5 years, or the test result was positive or unknown). The questionnaire has two questions to select one option from each, each with an associated risk value.
+Table 1. Example of a questionnaire with risk-stratification to select target population for screening (20 \< Age \< 35, not HPV test in the last 5 years, or the test result was positive or unknown). The questionnaire has two questions to select one option from each, each with an associated risk value.
 
 | Question | Question text | Option | Options | Risk value |
 | :---- | :---- | :---- | :---- | :---- |
@@ -284,22 +290,22 @@ Based on the answers, three ranges were added to inform the participant about wh
 
 #  
 
-## **Risk assessment in the mobile app** {#risk-assessment-in-the-mobile-app}
+## Risk assessment in the mobile app
 
 This section provides the workflow for answering a questionnaire and getting the risk assessment in the app.
 
-1\. 	Open the app RISCC.
+1. 	Open the app RISCC.
 
 ![](img/26.jpg)
 
-2\. 	Answer the questionnaire.
+2. 	Answer the questionnaire.
 
 ![](img/27.jpg)
-3\. 	Get the risk assessment according to the answered questions.
+3. 	Get the risk assessment according to the answered questions.
 
 ![](img/28.jpg)
 
-4\. 	Go to the link added to the risk range.
+4. 	Go to the link added to the risk range.
 
 ![](img/29.jpg)
 
@@ -307,40 +313,40 @@ The above is just an illustrative example of how to use the platform's risk asse
 
 The design of the questions should be done with the following in mind: the questions are sequential (no bifurcations), and the type of questions managed by the system (select one option, select multiple options, rating, data input, only information).
 
-## **How do I implement the source code?** {#how-do-i-implement-the-source-code?}
+## How do I implement the source code?
 
 Although the mobile platform is in Beta, it is entirely functional and can be easily customised. The RISCC software repository is openly available. Any RISCC member or researcher interested in contributing or acquiring the code can access the backend and mobile app (iOS and Android) in this repository.
 
-### **Deploying the backend** {#deploying-the-backend}
+### Deploying the backend
 
 1. Alocate a web server   
 2. Deploy code from GitHub  
 3. Configuration file (server address, etc.)
 
-   # **Deploying an iOS App** {#deploying-an-ios-app}
+# Deploying an iOS App
 
 Here's a step-by-step guide to deploy your iOS application:
 
-## **1\. Prepare Your App for Release** {#1.-prepare-your-app-for-release}
+## 1. Prepare Your App for Release
 
 * Complete final testing: Test on different iOS devices and versions  
 * Update version and build numbers: In Xcode, update CFBundleVersion and CFBundleShortVersionString  
 * Configure app icons and launch screens: Ensure all required sizes are included  
 * Check app permissions: Review and validate all permission requests
 
-  ## **2\. Create an Apple Developer Account** {#2.-create-an-apple-developer-account}
+  ## 2. Create an Apple Developer Account
 
 * Sign up at [developer.apple.com](https://developer.apple.com)  
 * Pay the annual fee ($99 for individuals, $299 for organisations)  
 * Complete the enrollment process
 
-  ## **3\. Set Up App Store Connect** {#3.-set-up-app-store-connect}
+  ## 3. Set Up App Store Connect
 
 * Log in to [appstoreconnect.apple.com](https://appstoreconnect.apple.com)  
 * Create a new app listing (+ button → New App)  
 * Enter your app's basic information (name, primary language, bundle ID, SKU)
 
-  ## **4\. Configure Certificates and Profiles** {#4.-configure-certificates-and-profiles}
+  ## 4. Configure Certificates and Profiles
 
 **In Xcode:**
 
@@ -349,7 +355,7 @@ Here's a step-by-step guide to deploy your iOS application:
 3. Manage Certificates to create/download necessary certificates  
 4. Set up provisioning profiles
 
-   ## **5\. Create App Store Listing** {#5.-create-app-store-listing}
+   ## 5. Create App Store Listing
 
 * Add app description, keywords, and category  
 * Upload screenshots (required for all supported device sizes)  
@@ -357,16 +363,16 @@ Here's a step-by-step guide to deploy your iOS application:
 * Enter privacy policy URL  
 * Configure pricing and availability
 
-  ## **6\. Generate Release Build** {#6.-generate-release-build}
+  ## 6. Generate Release Build
 
-# **In Xcode:** {#in-xcode:}
+# In Xcode:
 
 1. Select Generic iOS Device as the build target  
 2. Set build configuration to Release  
 3. Go to Product → Archive  
 4. Once archiving completes, the Organizer window will open
 
-   ## **7\. Submit to App Store** {#7.-submit-to-app-store}
+   ## 7. Submit to App Store
 
 **From the Xcode Organizer:**
 
@@ -376,7 +382,7 @@ Here's a step-by-step guide to deploy your iOS application:
 4. Follow the distribution wizard  
 5. Upload the build to App Store Connect
 
-   ## **8\. Submit for Review** {#8.-submit-for-review}
+   ## 8. Submit for Review
 
 **In App Store Connect:**
 
@@ -386,13 +392,13 @@ Here's a step-by-step guide to deploy your iOS application:
 4. Provide demo account if needed  
 5. Submit for Review
 
-   ## **9\. Manage Your App** {#9.-manage-your-app}
+   ## 9. Manage Your App
 
 * Monitor crash reports  
 * Respond to user reviews  
 * Release updates as needed
 
-  ## **Alternative Distribution Methods** {#alternative-distribution-methods}
+  ## Alternative Distribution Methods
 
 * TestFlight: For beta testing before official release  
 * Ad Hoc distribution: For limited distribution to registered devices  
@@ -401,11 +407,11 @@ Here's a step-by-step guide to deploy your iOS application:
 
 The App Store review process typically takes 1-3 days but can vary based on app complexity and the review queue.
 
-# **Deploying an Android App** {#deploying-an-android-app}
+# Deploying an Android App
 
 Here's a step-by-step guide to deploy your Android application:
 
-## **1\. Prepare Your App for Release** {#1.-prepare-your-app-for-release-1}
+## 1. Prepare Your App for Release
 
 * **Complete final testing**: Test thoroughly on different devices  
 * **Update version information**: In build.gradle, set versionCode and versionName  
@@ -414,7 +420,7 @@ Here's a step-by-step guide to deploy your Android application:
   * Generate a signing key if you don't have one  
   * Configure app signing in Android Studio
 
-  ## **2\. Generate a Release Build** {#2.-generate-a-release-build}
+  ## 2. Generate a Release Build
 
 In Android Studio:
 
@@ -434,64 +440,64 @@ or
 Copy  
 ./gradlew assembleRelease
 
-## **3\. Test Your Release Build** {#3.-test-your-release-build}
+## 3. Test Your Release Build
 
 * Install the release version on test devices  
 * Verify that all features work correctly  
 * Check for any performance issues
 
-  ## **4\. Create a Google Play Developer Account** {#4.-create-a-google-play-developer-account}
+  ## 4. Create a Google Play Developer Account
 
 * Sign up at [play.google.com/apps/publish](https://play.google.com/apps/publish)  
 * Pay the one-time $25 registration fee
 
-  ## **5\. Set Up Your Google Play Console** {#5.-set-up-your-google-play-console}
+  ## 5. Set Up Your Google Play Console
 
 * Create your app listing  
 * Fill in store details (descriptions, screenshots, feature graphic)  
 * Set up pricing and distribution countries  
 * Configure content rating
 
-  ## **6\. Upload Your App** {#6.-upload-your-app}
+  ## 6. Upload Your App
 
 * Upload your signed AAB/APK  
 * Set up an internal test, closed test, or open test  
 * Create a production release when ready
 
-  ## **7\. Manage Your App** {#7.-manage-your-app}
+  ## 7. Manage Your App
 
 * Monitor crashes and ANRs  
 * Respond to user reviews  
 * Release updates as needed
 
-  ## **Alternative Distribution Methods** {#alternative-distribution-methods-1}
+  ## Alternative Distribution Methods
 
 * **Direct APK distribution**: Share via your website or email  
 * **Alternative app stores**: Amazon Appstore, Samsung Galaxy Store, Huawei AppGallery  
 * **Enterprise deployment**: Use Mobile Device Management (MDM) solutions
 
-# **Vaccination Platform** {#vaccination-platform}
+# Vaccination Platform
 
 The vaccination platform enables vaccination centres to collect risk factors and other information from the study participants before vaccination. It can also register vaccination information and prevent vaccinating participants from being exposed to risks due to the vaccination. This platform can be customised for different use cases and other languages.
 
 It has two main components: **Admin** and **Participant** applications. Both are web applications.
 
-# **Vaccination Admin application**  {#vaccination-admin-application}
+# Vaccination Admin application
 
 To be used by nurses and midwives.
 
-### **Main functionalities** {#main-functionalities-2}
+### Main functionalities
 
 * Admin: create nurses' accounts, export data, create questionnaires, groups of participants associated to questionnaires   
 * Nurses read the questionnaire’s answers before vaccinating the participant, vaccinating and updating info, exporting data, and editing existing records.
 
 ![](img/30.jpg)
 
-## **Vaccination Participant application** {#vaccination-participant-application}
+## Vaccination Participant application
 
 To be used by the study participant
 
-### **Main functionalities** {#main-functionalities-3}
+### Main functionalities
 
 * Consent participation  
 * Login with e-identification (or classic username, password)  
@@ -500,7 +506,7 @@ To be used by the study participant
 
 ![](img/31.jpg)
 
-# **GitHub Repository** {#github-repository}
+# GitHub Repository
 
 [https://github.com/kiehealth/RISCC](https://github.com/kiehealth/RISCC) 
 
